@@ -1,32 +1,15 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/f4455669-0ce8-40ea-8ff5-5c31f0aadfa5/deploy-status)](https://app.netlify.com/sites/skeleventy/deploys)
+---
+layout: page
+meta_title: About
+meta_description: About Skeleventy
+title: About
+sub_heading: Skeleventy is more opinionated than your typical 'barebones' starter kit. It's minimal design is a good basis to build upon for your blog or portfolio.
+eleventyNavigation:
+  key: About
+  order: 2
+---
 
-# An Eleventy starter skeleton
-
-Skeleventy gives you a rock solid foundation to build fast and accessible static websites. [View the demo site](http://skeleventy.netlify.app/).
-
-## Features
-
-- A clean, minimal build pipeline with SCSS and [Laravel Mix](https://laravel-mix.com/docs/5.0/basic-example) for compiling assets
-- [Gorko](https://github.com/hankchizljaw/gorko), a smart little Sass-powered utility class generator
-- [Purgecss](https://purgecss.com/) to remove unused CSS
-- HTML minifier
-- Supports ES2017 JavaScript, with Babel compilation
-- SEO friendly page meta, including Open Graph and Twitter
-- Image lazy loading
-- Mobile navigation
-- XML Sitemap
-- Clean and simple blog, with categories and featured images
-
-## Getting started
-
-### Prerequisites
-Node `v10+`
-
-### Installation
-
-1. Clone the repo `git clone https://github.com/josephdyer/skeleventy.git`
-2. `cd` into the project folder and run `npm install`
-3. Start the local development server by running `npm run dev` **Tip:** _Eleventy has live reload baked in!_
+It's simple and flexible enough to change if you want to, but takes away the design headache for those who just want to get something up and running.
 
 ## Folder structure
 

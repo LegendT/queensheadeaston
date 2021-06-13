@@ -1,0 +1,26 @@
+{
+  "name": "skeleventy",
+  "version": "3.0.0",
+  "description": "Skeleventy gives you a rock solid foundation to build fast and accessible static websites",
+  "scripts": {
+    "dev": "ELEVENTY_ENV=development npx @11ty/eleventy --config=eleventy.config.js --serve --quiet & mix watch",
+    "production": "mix --production & npx @11ty/eleventy --config=eleventy.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/josephdyer/skeleventy.git"
+  },
+  "author": "Joe Dyer",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.1",
+    "@11ty/eleventy-navigation": "^0.1.6",
+    "gorko": "^0.2.3",
+    "html-minifier": "^4.0.0",
+    "laravel-mix": "^6.0.11",
+    "laravel-mix-purgecss": "^6.0.0",
+    "postcss": "^8.2.6",
+    "resolve-url-loader": "^3.1.2",
+    "sass-loader": "^11.0.1"
+  }
+}
