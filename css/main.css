@@ -486,7 +486,7 @@
   z-index: 20;
 }
 
-@media screen and (min-width : 22.5em) {
+@media (min-width : 22.5em) {
   .mobileL\:box-block {
     display: block;
   }
@@ -527,7 +527,7 @@
     width: 33.3333333333%;
   }
 }
-@media screen and (min-width : 40em) {
+@media (min-width : 40em) {
   .mobileXL\:box-block {
     display: block;
   }
@@ -568,7 +568,7 @@
     width: 33.3333333333%;
   }
 }
-@media screen and (min-width : 48em) {
+@media (min-width : 48em) {
   .tablet\:box-block {
     display: block;
   }
@@ -609,7 +609,7 @@
     width: 33.3333333333%;
   }
 }
-@media screen and (min-width : 64em) {
+@media (min-width : 64em) {
   .laptop\:box-block {
     display: block;
   }
@@ -650,7 +650,7 @@
     width: 33.3333333333%;
   }
 }
-@media screen and (min-width : 80em) {
+@media (min-width : 80em) {
   .desktop\:box-block {
     display: block;
   }
@@ -691,7 +691,7 @@
     width: 33.3333333333%;
   }
 }
-@media screen and (min-width : 90em) {
+@media (min-width : 90em) {
   .desktopL\:box-block {
     display: block;
   }
@@ -732,7 +732,7 @@
     width: 33.3333333333%;
   }
 }
-@media screen and (min-width : 120em) {
+@media (min-width : 120em) {
   .desktopXL\:box-block {
     display: block;
   }
