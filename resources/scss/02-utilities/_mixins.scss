@@ -1,3 +1,5 @@
-
 //==========  Mixins  ==========//
-
+@mixin bg-opacity($pad: '500', $opacity: 0.7) {
+	background-color: rgba(255, 255, 255, $opacity);
+	padding: get-size($pad);
+}

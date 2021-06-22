@@ -1,35 +1,35 @@
 {
-  "name": "skeleventy",
-  "version": "3.0.0",
-  "description": "Skeleventy gives you a rock solid foundation to build fast and accessible static websites",
-  "scripts": {
-    "dev": "ELEVENTY_ENV=development npx @11ty/eleventy --config=eleventy.config.js --serve --quiet & mix watch",
-    "production": "mix --production & npx @11ty/eleventy --config=eleventy.config.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/josephdyer/skeleventy.git"
-  },
-  "author": "Joe Dyer",
-  "license": "MIT",
-  "devDependencies": {
-    "@11ty/eleventy": "^0.12.1",
-    "@11ty/eleventy-navigation": "^0.2.0",
-    "gorko": "^0.4.1",
-    "html-minifier": "^4.0.0",
-    "laravel-mix": "^6.0.20",
-    "laravel-mix-purgecss": "^6.0.0",
-    "postcss": "^8.3.5",
-    "resolve-url-loader": "^4.0.0",
-    "sass-loader": "^12.1.0"
-  },
-  "dependencies": {
-    "child_process": "^1.0.2",
-    "eleventy-plugin-error-overlay": "^0.1.2",
-    "express": "^4.17.1",
-    "filendir": "^2.0.0",
-    "fs-extra": "^10.0.0",
-    "node-fetch": "^2.6.1",
-    "path": "^0.12.7"
-  }
+	"name": "skeleventy",
+	"version": "3.0.0",
+	"description": "Skeleventy gives you a rock solid foundation to build fast and accessible static websites",
+	"scripts": {
+		"dev": "ELEVENTY_ENV=development npx @11ty/eleventy --config=eleventy.config.js --serve --quiet & mix watch",
+		"production": "mix --production & npx @11ty/eleventy --config=eleventy.config.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/josephdyer/skeleventy.git"
+	},
+	"author": "Joe Dyer",
+	"license": "MIT",
+	"devDependencies": {
+		"@11ty/eleventy": "^0.12.1",
+		"@11ty/eleventy-navigation": "^0.2.0",
+		"gorko": "^0.4.1",
+		"html-minifier": "^4.0.0",
+		"laravel-mix": "^6.0.20",
+		"laravel-mix-purgecss": "^6.0.0",
+		"postcss": "^8.3.5",
+		"resolve-url-loader": "^4.0.0",
+		"sass-loader": "^12.1.0"
+	},
+	"dependencies": {
+		"child_process": "^1.0.2",
+		"eleventy-plugin-error-overlay": "^0.1.2",
+		"express": "^4.17.1",
+		"filendir": "^2.0.0",
+		"fs-extra": "^10.0.0",
+		"node-fetch": "^2.6.1",
+		"path": "^0.12.7"
+	}
 }

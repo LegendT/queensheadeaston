@@ -1,25 +1,28 @@
-
 //==========  Nav  ==========//
 
 .nav {
+	@include bg-opacity($pad: '300');
+	.link {
+		height: get-size('900');
+		line-height: get-size('900');
 
-    .link {
-        height: get-size('900');
-        line-height: get-size('900');
+		&.active,
+		&:hover {
+			@include apply-utility('color', 'tertiary');
+			text-decoration: underline;
+			text-underline-position: under;
+			text-decoration-skip: ink;
+		}
 
-        &.active,
-        &:hover {
-            @include apply-utility('color', 'secondary');
-        }
+		&-get-started {
+			border-radius: v(border-radius);
+			transition: background-color v(transition-duration)
+				v(transition-timing);
 
-        &-get-started {
-            border-radius: v(border-radius);
-            transition: background-color v(transition-duration) v(transition-timing);
-
-            &:hover {
-                @include apply-utility('bg', 'white');
-                @include apply-utility('color', 'primary');
-            }
-        }
-    }
+			&:hover {
+				@include apply-utility('bg', 'white');
+				@include apply-utility('color', 'primary');
+			}
+		}
+	}
 }

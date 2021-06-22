@@ -1,44 +1,55 @@
-
 //========== Utilities ==========//
 
 // container
 .inner {
-    @include apply-utility('width', 'full');
-    margin: 0 auto;
-    max-width: v(max-width);
-    @include apply-utility('pl', '600');
-    @include apply-utility('pr', '600');
+	@include apply-utility('width', 'full');
+	margin: 0 auto;
+	max-width: v(max-width);
+	@include apply-utility('pl', '600');
+	@include apply-utility('pr', '600');
 }
 
 // better vertical rhythm
 .flow > * + * {
-    margin-top: v(gap);
+	margin-top: v(gap);
 
-    @include media-query('tablet') {
-        --gap: #{get-size('700')};
-    }
+	@include media-query('tablet') {
+		--gap: #{get-size('700')};
+	}
 }
 
 // subtle fade in to lazyloaded images
 [data-src] {
-    opacity: 0;
+	opacity: 0;
 }
 
 .loaded {
-    opacity: 1;
-    transition: opacity v(transition-duration) v(transition-timing);
+	opacity: 1;
+	transition: opacity v(transition-duration) v(transition-timing);
 }
 
 // content only for screen readers
 .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border-width: 0;
 }
 
+@mixin out($colour: #bada55, $width: 2px) {
+	outline: $width dashed $colour;
+}
+
+// sass-lint:disable no-color-literals
+@mixin cabbage($colour: deeppink) {
+	outline: 2px solid $colour;
+}
+
+.cabbage {
+	@include cabbage;
+}

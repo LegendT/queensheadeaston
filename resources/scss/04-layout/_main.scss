@@ -1,25 +1,29 @@
-
 //==========  Main  ==========//
 
 .main {
-    flex-direction: column;
-    flex: 1;
+	flex-direction: column;
+	flex: 1;
 
-    &:focus {
-        outline: 0;
-    }
+	&:focus {
+		outline: 0;
+	}
 }
 
 // page header
 .page-header {
-    --gap: #{get-size('800')};
-    margin-bottom: v(gap);
+	--gap: #{get-size('800')};
+	color: get-color('primary');
+	margin-bottom: v(gap);
+
+	> h1 {
+		--gap: 0;
+		display: inline-block;
+		@include bg-opacity;
+	}
 }
 
 @include media-query('tablet') {
-
-    .page-header {
-        --gap: #{get-size('900')};
-    }
+	.page-header {
+		--gap: #{get-size('900')};
+	}
 }
-

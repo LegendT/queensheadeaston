@@ -31,9 +31,12 @@
 </head>
 
 
-<body id="page-{{ page.fileSlug if page.fileSlug else 'home' }}" class="type-{{ layout | lower }} page-{{ page.fileSlug if page.fileSlug else 'home' }} bg-primary color-white font-base leading-normal">
+<body id="page-{{ page.fileSlug if page.fileSlug else 'home' }}" class="type-{{ layout | lower }} page-{{ page.fileSlug if page.fileSlug else 'home' }} bg-primary color-primary font-base leading-normal">
 
     <a class="sr-only" href="#main">Skip to content</a>
+
+    {# include mobile nav #}
+    {% include "components/mobile-nav.njk" %}
 
     <div id="wrapper" class="wrapper box-flex pb-900">
 
@@ -43,13 +46,15 @@
         {# include content #}
         {{ content | safe }}
 
+        {# include featured #}
+        {% include "components/featured.njk" %}
+
         {# include footer #}
         {% include "components/footer.njk" %}
 
     </div>
 
-    {# include mobile nav #}
-    {% include "components/mobile-nav.njk" %}
+
 
 </body>
 </html>

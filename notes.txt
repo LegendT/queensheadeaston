@@ -1,0 +1,40 @@
+Google map
+Opening times
+Featured events
+Social Media
+
+Food menu
+
+Team
+
+About
+
+Events
+	DJ's
+
+Gallery
+
+Location
+
+Contact
+
+
+Favicon
+
+Meta data
+
+Schema
+
+Sitemap
+
+Join our crew
+
+Covid
+
+Privacy statement
+
+Accessibility statement
+
+Intro to Vue 3
+Real World Vue 3
+Component Design Patterns

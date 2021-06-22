@@ -58,7 +58,7 @@ const init = async () => {
 		console.log(`${data}`)
 	})
 
-	app.use(express.static('dist'))
+	app.use(express.static('public'))
 
 	app.get('/reload', async (req, res) => {
 		await speakers()
