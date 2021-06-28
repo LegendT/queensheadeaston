@@ -1,6 +1,12 @@
 //==========  Main  ==========//
 
 .main {
+	position: relative;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: -1;
+	margin-top: -7.8rem;
 	flex-direction: column;
 	flex: 1;
 
@@ -14,7 +20,11 @@
 	--gap: #{get-size('800')};
 	color: get-color('primary');
 	margin-bottom: v(gap);
-
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+	height: 70vh;
 	> h1 {
 		--gap: 0;
 		display: inline-block;

@@ -5,10 +5,8 @@ meta_description: The contact page
 title: Get in touch
 sub_heading: We'd love to hear from you.
 eleventyNavigation:
-  key: Contact
-  order: 4
+    key: Contact
+    order: 5
 ---
 
 Simply fill out the form below and we'll gladly ignore it.
-
-

@@ -1,21 +1,20 @@
 ---
 layout: base
 ---
+<main id="main" class="main box-flex pb-1100" tabindex="-1">
+    <div id="wrapper" class="wrapper box-flex pb-900">
+        <header class="page-header">
 
-<main id="main" class="main inner box-flex pt-800 pb-1100" tabindex="-1">
+            <h1 class="page-title">{{ title }}</h1>
 
-    <header class="page-header">
+            {% if sub_heading %}
 
-        <h1 class="page-title">{{ title }}</h1>
+                <p class="sub-heading">{{ sub_heading }}</p>
 
-        {% if sub_heading %}
+            {% endif %}
 
-            <p class="sub-heading">{{ sub_heading }}</p>
-
-        {% endif %}
-
-    </header>
-
+        </header>
+    </div>
     <div class="content flow">
 
         {{ content | safe }}

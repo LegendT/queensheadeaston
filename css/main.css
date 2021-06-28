@@ -985,7 +985,7 @@ a:not([class]):hover {
 }
 
 .wrapper {
-  min-height: 100vh;
+  min-height: 70vh;
   flex-direction: column;
   background-attachment: fixed;
   background-size: cover;
@@ -1103,6 +1103,12 @@ a:not([class]):hover {
 }
 
 .main {
+  position: relative;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;
+  margin-top: -7.8rem;
   flex-direction: column;
   flex: 1;
 }
@@ -1114,6 +1120,11 @@ a:not([class]):hover {
   --gap: 2.44rem;
   color: #01093c;
   margin-bottom: var(--gap);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  height: 70vh;
 }
 .page-header > h1 {
   --gap: 0;
