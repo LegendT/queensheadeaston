@@ -1,0 +1,55 @@
+.card {
+	position: relative;
+
+	&-header {
+		position: relative;
+	}
+
+	&-image {
+		border-radius: v(border-radius);
+	}
+
+	&-categories {
+		position: absolute;
+		bottom: 0;
+		left: get-size('300');
+		transform: translateY(50%);
+
+		.category {
+			--border-radius: 0.15rem;
+			border-radius: v(border-radius);
+			padding: 0.25rem 0.5rem;
+		}
+	}
+
+	&-title-link {
+		border-bottom: v(border-size) solid get-color('secondary');
+		transition: border-color v(transition-duration) v(transition-timing);
+
+		&:hover {
+			border-bottom-color: get-color('primary');
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+		}
+	}
+
+	.datetime {
+		position: absolute;
+		bottom: 0;
+	}
+}
+
+@include media-query('tablet') {
+	.card {
+		&-title-link {
+			font-size: v(text-700);
+		}
+	}
+}

@@ -999,6 +999,11 @@ a:not([class]):hover {
     padding-bottom: 0;
   }
 }
+header {
+  position: relative;
+  z-index: 1;
+}
+
 .logo {
   --logo-size: 1.25rem;
   font-size: var(--logo-size);
@@ -1107,7 +1112,6 @@ a:not([class]):hover {
   top: 0;
   right: 0;
   left: 0;
-  z-index: -1;
   margin-top: -7.8rem;
   flex-direction: column;
   flex: 1;
@@ -1194,6 +1198,51 @@ a:not([class]):hover {
   padding: 1.25rem;
 }
 
+.card {
+  position: relative;
+}
+.card-header {
+  position: relative;
+}
+.card-image {
+  border-radius: var(--border-radius);
+}
+.card-categories {
+  position: absolute;
+  bottom: 0;
+  left: 0.8rem;
+  transform: translateY(50%);
+}
+.card-categories .category {
+  --border-radius: 0.15rem;
+  border-radius: var(--border-radius);
+  padding: 0.25rem 0.5rem;
+}
+.card-title-link {
+  border-bottom: var(--border-size) solid #e09b24;
+  transition: border-color var(--transition-duration) var(--transition-timing);
+}
+.card-title-link:hover {
+  border-bottom-color: #01093c;
+}
+.card-title-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+.card .datetime {
+  position: absolute;
+  bottom: 0;
+}
+
+@media (min-width : 48em) {
+  .card-title-link {
+    font-size: var(--text-700);
+  }
+}
 .type-post .length-optimal {
   margin-left: auto;
   margin-right: auto;
@@ -1222,45 +1271,17 @@ a:not([class]):hover {
   padding-bottom: 15vh;
 }
 
-.card {
-  position: relative;
-}
-.card-header {
-  position: relative;
-}
-.card-image {
-  border-radius: var(--border-radius);
-}
-.card-categories {
-  position: absolute;
-  bottom: 0;
-  left: 0.8rem;
-  transform: translateY(50%);
-}
-.card-categories .category {
-  --border-radius: .15rem;
-  border-radius: var(--border-radius);
-  padding: 0.25rem 0.5rem;
-}
-.card-title-link {
-  border-bottom: var(--border-size) solid #e09b24;
-  transition: border-color var(--transition-duration) var(--transition-timing);
-}
-.card-title-link:hover {
-  border-bottom-color: #01093c;
-}
-.card .datetime {
-  position: absolute;
-  bottom: 0;
-}
-
-@media (min-width : 48em) {
-  .card-title-link {
-    font-size: var(--text-700);
-  }
-}
 @media (min-width : 64em) {
   .posts {
     grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
   }
+}
+@media (min-width : 64em) {
+  .event .content {
+    margin: 0 auto;
+  }
+}
+.event .event-image {
+  max-width: 30vw;
+  margin: 0 auto;
 }

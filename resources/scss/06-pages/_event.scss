@@ -1,0 +1,11 @@
+.event {
+	.content {
+		@include media-query('laptop') {
+			margin: 0 auto;
+		}
+	}
+	.event-image {
+		max-width: 30vw;
+		margin: 0 auto;
+	}
+}

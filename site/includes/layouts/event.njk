@@ -1,62 +1,34 @@
 ---
 layout: base
 ---
-<main id="main" class="main inner box-flex pt-900 pb-600" tabindex="-1">
+<main id="main" class="main box-flex pb-600" tabindex="-1">
+    <div id="wrapper" class="wrapper box-flex pb-900">
+        <article>
+            <header class="page-header length-optimal mb-1000 pb-500">
 
-    <article id="container-centre" class="column centre">
-<div id="wrapper" class="wrapper box-flex pb-900">
-        <header class="page-header length-optimal mb-1000 pb-500">
+                <h1 class="post-title">{{ name }}</h1>
 
-            <h1 class="post-title">{{ name }}</h1>
+                {% if sub_heading %}
 
-            {% if sub_heading %}
-
-                <p class="sub-heading">{{ sub_heading }}</p>
-
-            {% endif %}
-    
-            <div class="post-meta box-flex mt-800 text-400">
-
-                <time class="datetime" datetime="{{ dayDate | timestamp }}">{{ dayDate }}</time>
-
-                {% if tags %}
-
-                    <div class="box-flex">
-
-                        <ul class="categories">
-
-                            {# this will create a comma for multiple category links #}
-                            {% set comma = joiner() %}
-
-                            {% for item in tags %}
-
-                                {%- if item !== 'blog' -%}
-
-                                    <li class="category"><a href="/categories/{{ item }}">{{ comma() }} {{ item | capitalize }}</a></li>
-
-                                {%- endif -%}
-
-                            {% endfor %}
-
-                        </ul>
-
-                    </div>
+                    <p class="sub-heading">{{ sub_heading }}</p>
 
                 {% endif %}
-
-            </div>
-
-        </header>
-</div>
+            </header>
+        </article>
+    </div>
+    <article class="inner event box-flex">
+    
         {# featured post image #}
         {% if poster.src %}
 
-            <figure class="post-image bg-white pt-600 pr-600 pl-600 mb-1000">
+            <figure class="event-image bg-white pt-600 pr-600 pl-600 mb-1000">
 
-                <img data-src="{{ poster.src }}" alt="{{ poster.alt }}">
+                <img src="{{ poster.src }}" alt="{{ poster.alt }}">
 
                 {% if poster.alt %}
-                    <figcaption class="post-image-caption bg-white color-primary pt-600 pb-600 text-400">{{ poster.alt }}</figcaption>
+                    <figcaption class="post-image-caption bg-white color-primary pt-600 pb-600 text-400">
+                    <span class="sr-only">{{ poster.alt }}</span>
+                    </figcaption>
                 {% endif %}
 
             </figure>
@@ -64,20 +36,47 @@ layout: base
         {% endif %}
 
         <div class="content flow length-optimal">
+                <div class="post-meta box-flex mt-800 text-400">
+                    {% if tags %}
+                        <div class="box-flex">
+                            <ul class="categories">
 
+                                {# this will create a comma for multiple category links #}
+                                {% set comma = joiner() %}
+
+                                {% for item in tags %}
+
+                                    {%- if item !== 'blog' -%}
+
+                                        <li class="category">
+                                            <a href="/categories/{{ item }}">{{ comma() }} {{ item | capitalize }}</a>
+                                        </li>
+
+                                    {%- endif -%}
+
+                                {% endfor %}
+
+                            </ul>
+                        </div>
+                    {% endif %}
+                </div>
+            <h2><time class="datetime" datetime="{{ dayDate | timestamp }}">{{ dayDate }}</time></h2>
             {{ description | markdownFilter | safe }}
 
-            <nav class="pagination mb-1000" aria-label="Pagination">
-                <ul class="items text-400 tablet:box-flex">
-                    {% if previous_post %}<li class="mb-300"><span class="weight-bold">Previous:</span> <a href="{{ previous_post.url }}">{{ previous_post.data.title }}</a></li>{% endif %}
-                    {% if next_post %}<li><span class="weight-bold">Next:</span> <a href="{{ next_post.url }}">{{ next_post.data.title }}</a></li>{% endif %}
-                </ul>
-            </nav>
+            
 
         </div>
 
     </article>
 
+<div class="inner">    
+    <nav class="pagination pr-600 pl-600 mb-1000" aria-label="Pagination">
+        <ul class="items text-400 tablet:box-flex">
+            {% if previous_event %}<li class="mb-300"><span class="weight-bold">Previous:</span> <a href="{{ previous_post.url }}">{{ previous_event.data.title }}</a></li>{% endif %}
+            {% if next_event %}<li><span class="weight-bold">Next:</span> <a href="{{ next_event.url }}">{{ next_event.data.title }}</a></li>{% endif %}
+        </ul>
+    </nav>
+</div>
     {# schema #}
     <script type="application/ld+json">
     {
