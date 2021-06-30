@@ -1,14 +1,25 @@
 //==========  Nav  ==========//
 
 .nav {
-	@include bg-opacity($pad: '300');
+	position: relative;
+	&::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		z-index: -1;
+		background: #d36b11;
+		// background: linear-gradient(-45deg, green,yellow,red);
+		// opacity: 0.5;
+		mix-blend-mode: screen;
+	}
+
 	.link {
 		height: get-size('900');
 		line-height: get-size('900');
 
 		&.active,
 		&:hover {
-			@include apply-utility('color', 'tertiary');
+			@include apply-utility('color', 'primary');
 			text-decoration: underline;
 			text-underline-position: under;
 			text-decoration-skip: ink;
@@ -16,8 +27,7 @@
 
 		&-get-started {
 			border-radius: v(border-radius);
-			transition: background-color v(transition-duration)
-				v(transition-timing);
+			transition: background-color v(transition-duration) v(transition-timing);
 
 			&:hover {
 				@include apply-utility('bg', 'white');

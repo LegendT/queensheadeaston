@@ -5,9 +5,10 @@
 	top: 0;
 	right: 0;
 	left: 0;
-	margin-top: -7.8rem;
+	margin-top: get-size('200');
 	flex-direction: column;
 	flex: 1;
+	z-index: 1;
 
 	&:focus {
 		outline: 0;
@@ -21,13 +22,38 @@
 	margin-bottom: v(gap);
 	display: flex;
 	align-items: flex-start;
-	justify-content: center;
+	justify-content: space-around;
 	flex-direction: column;
 	height: 70vh;
+
+	&::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		z-index: -1;
+		background: #d36b11;
+		//background: linear-gradient(-45deg, yellow, red);
+		opacity: 0.5;
+		mix-blend-mode: soft-light;
+	}
+
 	> h1 {
 		--gap: 0;
 		display: inline-block;
-		@include bg-opacity;
+		position: relative;
+		padding: get-size('600');
+		//@include bg-opacity;
+
+		&::after {
+			content: '';
+			position: absolute;
+			inset: 0;
+			z-index: -1;
+			background: #d36b11;
+			// background: linear-gradient(-45deg, green, yellow, red);
+			// opacity: .5;
+			mix-blend-mode: screen;
+		}
 	}
 }
 

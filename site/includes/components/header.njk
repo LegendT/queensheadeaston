@@ -1,10 +1,14 @@
-
-<header id="header" class="header">
-
-	<div class="header-inner inner pt-600 pb-600 mobileL:box-flex">
+<header class="header wrapper box-flex pb-900 page-header">
+	<div class="header-inner inner mobileL:box-flex">
 		{% include "components/logo.njk" %}
 		{% include "components/nav.njk" %}
 	</div>
+    <h1 class="page-title">{{ title }}</h1>
+
+		{% if sub_heading %}
+
+			<p class="sub-heading">{{ sub_heading }}</p>
+
+		{% endif %}
 
 </header>
-

@@ -992,6 +992,8 @@ a:not([class]):hover {
   background-position: center center;
   background-repeat: no-repeat;
   background-image: url("/images/IMG_3962.jpg");
+  isolation: isolate;
+  mix-blend-mode: screen;
 }
 
 @media (min-width : 40em) {
@@ -1001,7 +1003,7 @@ a:not([class]):hover {
 }
 header {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .logo {
@@ -1026,15 +1028,22 @@ header {
   }
 }
 .nav {
-  background-color: rgba(255, 255, 255, 0.7);
-  padding: 0.8rem;
+  position: relative;
+}
+.nav::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: #d36b11;
+  mix-blend-mode: screen;
 }
 .nav .link {
   height: 3.05rem;
   line-height: 3.05rem;
 }
 .nav .link.active, .nav .link:hover {
-  color: #5e250e;
+  color: #01093c;
   text-decoration: underline;
   text-underline-position: under;
   -webkit-text-decoration-skip: ink;
@@ -1112,9 +1121,9 @@ header {
   top: 0;
   right: 0;
   left: 0;
-  margin-top: -7.8rem;
   flex-direction: column;
   flex: 1;
+  z-index: 1;
 }
 .main:focus {
   outline: 0;
@@ -1126,15 +1135,32 @@ header {
   margin-bottom: var(--gap);
   display: flex;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: space-around;
   flex-direction: column;
   height: 70vh;
+}
+.page-header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: #d36b11;
+  opacity: 0.5;
+  mix-blend-mode: soft-light;
 }
 .page-header > h1 {
   --gap: 0;
   display: inline-block;
-  background-color: rgba(255, 255, 255, 0.7);
-  padding: 1.25rem;
+  position: relative;
+  padding: 1.56rem;
+}
+.page-header > h1::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: #d36b11;
+  mix-blend-mode: screen;
 }
 
 @media (min-width : 48em) {
