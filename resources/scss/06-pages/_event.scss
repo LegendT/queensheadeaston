@@ -5,7 +5,9 @@
 		}
 	}
 	.event-image {
-		max-width: 30vw;
 		margin: 0 auto;
+		@include media-query('tablet') {
+			max-width: 30vw;
+		}
 	}
 }

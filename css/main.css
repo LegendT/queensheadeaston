@@ -1308,6 +1308,10 @@ header {
   }
 }
 .event .event-image {
-  max-width: 30vw;
   margin: 0 auto;
+}
+@media (min-width : 48em) {
+  .event .event-image {
+    max-width: 30vw;
+  }
 }

@@ -1,10 +1,13 @@
 ---
 name: 'Selecta Tuttut'
 affiliations: 'Hit The North'
-description: "### Selecta Tuttut
-
+description: "
 Joining Kev and Tone this week is Selecta Tuttut with a special vinyl only selection of 80's and 90's music"
-dayDate: 'Friday 25th June'
+day: 'Friday'
+date: 2021-06-25
+startTime: '20:00'
+endTime: '23:30'
+style: "80's and 90's"
 displayOrder: 2
 featured: true
 poster:
