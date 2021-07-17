@@ -8,17 +8,9 @@
 		inset: 0;
 		z-index: -1;
 	}
-	.fancy-border-radius.fbr-sep {
-		margin-right: -20px;
-		margin-top: -10px;
-		margin-bottom: -20px;
-	}
 	.link {
-		height: get-size('900');
-		line-height: get-size('900');
-
 		&.active,
-		&:hover {
+		&::hover {
 			@include apply-utility('color', 'primary');
 			text-decoration: underline;
 			text-underline-position: under;

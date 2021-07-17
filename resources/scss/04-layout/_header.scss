@@ -45,19 +45,3 @@ header {
 		z-index: -1;
 	}
 }
-.fancy-border-radius.fbr-sep {
-	background: #d36b11;
-	inset: 0;
-	margin-top: 0;
-	.page-home & {
-		margin-left: -20px;
-		margin-bottom: -20px;
-		margin-right: -70px;
-	}
-	.page-contact & {
-		margin-right: -50px;
-	}
-	.page-blog & {
-		margin-bottom: -20px;
-	}
-}

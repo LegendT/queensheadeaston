@@ -18,6 +18,7 @@ $gorko-base-size: 1rem;
  * your whole project.
  */
 $gorko-size-scale: (
+	'200': $gorko-base-size * 0.5,
 	'300': $gorko-base-size * 0.8,
 	'400': $gorko-base-size,
 	'500': $gorko-base-size * 1.25,
@@ -60,10 +61,8 @@ $gorko-config: (
 	),
 	'font': (
 		'items': (
-			'base':
-				'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif',
-			'heading':
-				'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif',
+			'base': 'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif',
+			'heading': 'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif',
 		),
 		'output': 'standard',
 		'property': 'font-family',
@@ -193,6 +192,6 @@ $gorko-config: (
 		// 1280px
 		'desktopL': '(min-width : 90em)',
 		// 1440px
-		'desktopXL': '(min-width : 120em)' // 1920px,,,,,,,
+		'desktopXL': '(min-width : 120em)' // 1920px,,,,,,,,
 	),
 );
