@@ -7,12 +7,12 @@
 		position: absolute;
 		inset: 0;
 		z-index: -1;
-		background: #d36b11;
-		// background: linear-gradient(-45deg, green,yellow,red);
-		// opacity: 0.5;
-		mix-blend-mode: screen;
 	}
-
+	.fancy-border-radius.fbr-sep {
+		margin-right: -20px;
+		margin-top: -10px;
+		margin-bottom: -20px;
+	}
 	.link {
 		height: get-size('900');
 		line-height: get-size('900');

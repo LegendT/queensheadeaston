@@ -1025,8 +1025,43 @@ header {
   .header-inner {
     align-items: center;
     justify-content: space-between;
+    align-self: flex-end;
   }
 }
+.fancy-border-radius {
+  z-index: -1;
+  position: absolute;
+  border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
+  max-width: 900px;
+  height: auto;
+  background: #d36b11;
+  mix-blend-mode: lighten;
+  margin-top: -10px;
+}
+.fancy-border-radius::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.fancy-border-radius.fbr-sep {
+  background: #d36b11;
+  inset: 0;
+  margin-top: 0;
+}
+.page-home .fancy-border-radius.fbr-sep {
+  margin-left: -20px;
+  margin-bottom: -20px;
+  margin-right: -70px;
+}
+.page-contact .fancy-border-radius.fbr-sep {
+  margin-right: -50px;
+}
+.page-blog .fancy-border-radius.fbr-sep {
+  margin-bottom: -20px;
+}
+
 .nav {
   position: relative;
 }
@@ -1035,8 +1070,11 @@ header {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: #d36b11;
-  mix-blend-mode: screen;
+}
+.nav .fancy-border-radius.fbr-sep {
+  margin-right: -20px;
+  margin-top: -10px;
+  margin-bottom: -20px;
 }
 .nav .link {
   height: 3.05rem;
@@ -1153,14 +1191,7 @@ header {
   display: inline-block;
   position: relative;
   padding: 1.56rem;
-}
-.page-header > h1::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: #d36b11;
-  mix-blend-mode: screen;
+  min-width: 18vw;
 }
 
 @media (min-width : 48em) {

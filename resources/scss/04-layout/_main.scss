@@ -43,17 +43,7 @@
 		position: relative;
 		padding: get-size('600');
 		//@include bg-opacity;
-
-		&::after {
-			content: '';
-			position: absolute;
-			inset: 0;
-			z-index: -1;
-			background: #d36b11;
-			// background: linear-gradient(-45deg, green, yellow, red);
-			// opacity: .5;
-			mix-blend-mode: screen;
-		}
+		min-width: 18vw;
 	}
 }
 
