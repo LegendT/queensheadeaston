@@ -1239,7 +1239,7 @@ header {
 
 .textarea,
 .input {
-  border: 0;
+  border: 2px solid #01093c;
   border-radius: var(--border-radius);
   padding: 0 0.5rem;
 }
@@ -1315,23 +1315,20 @@ header {
   background: #d36b11;
   inset: 0;
   margin-top: 0;
+  margin-bottom: -20px;
 }
 .nav .fancy-border-radius.fbr-sep {
   margin-right: -40px;
   margin-top: -20px;
-  margin-bottom: -30px;
+  margin-bottom: -25px;
   margin-left: -20px;
 }
 .page-home .fancy-border-radius.fbr-sep {
   margin-left: -20px;
-  margin-bottom: -20px;
   margin-right: -70px;
 }
 .page-contact .fancy-border-radius.fbr-sep {
   margin-right: -50px;
-}
-.page-blog .fancy-border-radius.fbr-sep {
-  margin-bottom: -20px;
 }
 
 .type-post .length-optimal {
