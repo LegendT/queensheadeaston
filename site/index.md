@@ -3,10 +3,12 @@ layout: home
 meta_title: Home
 meta_description: The Queens Head, Easton, Bristol. Table service, Dj's at weekends.
 title: The Queens Head, Easton, Bristol
-sub_heading:
+featured:
+  title: "Selected work"
+  summary: "Some stuff that should give you an idea of what we're all about."
 eleventyNavigation:
-    key: Home
-    order: 1
+  key: Home
+  order: 1
 ---
 
 ## Welcome

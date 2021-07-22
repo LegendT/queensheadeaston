@@ -1,5 +1,35 @@
-<section class="featured bg-white">
-    <div class="inner box-flex pt-600 pb-600">
-        <h3>Featured Section</h3>
-    </div>
+<section class="bg-white">
+  <div class="inner box-flex pt-600 pb-600">
+    <article class="[ featured ]">
+      <div class="[ wrapper ] [ flow ]">
+        <div class="[ featured__inner ] [ flow ]">
+          <div class="[ featured__intro ] [ flow flow-space-300 ]">
+            <div class="fancy-border-radius fbr-sep"></div>
+            <h3>{{ featured.title }}</h3>
+            <p class="[ featured__summary ] [ measure-compact ]">
+              {{ featured.summary }}
+            </p>
+          </div>
+          {% for item in collections.featured %}
+          <a
+            href="{{ item.url }}"
+            aria-label="See {{ item.data.name }}"
+            class="[ featured__item ] [ frame ]"
+            data-frame="quaternary"
+          >
+            <img
+              src="{{ item.data.poster.src }}"
+              alt="{{ item.data.poster.alt }}"
+              loading="lazy"
+              class="radius"
+            />
+          </a>
+          {% endfor %}
+        </div>
+        <div class="[ featured__action ] [ flow-space-700 ]">
+          <a href="/events/" class="button">See more events</a>
+        </div>
+      </div>
+    </article>
+  </div>
 </section>

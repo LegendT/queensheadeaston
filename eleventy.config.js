@@ -3,6 +3,7 @@ const dates = require('./utilities/filters/dates');
 const markdownFilter = require('./utilities/filters/parse-markdown');
 const helpers = require('./utilities/filters/helpers');
 const path = require('path');
+const sortByDisplayOrder = require('./utilities/filters/sort-by-display-order.js');
 
 module.exports = (config) => {
 	// navigation plugin
@@ -22,6 +23,11 @@ module.exports = (config) => {
 
 	// Minify our HTML
 	config.addTransform('htmlminify', require('./utilities/transforms/htmlminify'));
+
+	// Returns event items, sorted by display order then filtered by featured
+	config.addCollection('featured', (collection) => {
+		return sortByDisplayOrder(collection.getFilteredByGlob('./site/events/*.md')).filter((x) => x.data.featured);
+	});
 
 	// Collections
 	config.addCollection('blog', (collection) => {

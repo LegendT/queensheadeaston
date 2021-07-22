@@ -1,20 +1,33 @@
 //========== Site ==========//
 
 // wrapper
-.wrapper {
-	min-height: 70vh;
-	flex-direction: column;
-	background-attachment: fixed;
-	background-size: cover;
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-image: url('/images/IMG_3962.jpg');
-	isolation: isolate;
-	mix-blend-mode: screen;
+.header-wrapper {
+  max-width: 100%;
+  min-height: 70vh;
+  flex-direction: column;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url("/images/IMG_3962.jpg");
+  isolation: isolate;
+  mix-blend-mode: screen;
 }
 
-@include media-query('mobileXL') {
-	.wrapper {
-		padding-bottom: 0;
-	}
+@include media-query("mobileXL") {
+  .header-wrapper {
+    padding-bottom: 0;
+  }
+}
+/**
+ * WRAPPER
+ * Sets a max width, adds a consisten gutter and horizontally
+ * centers the contents
+ */
+.wrapper {
+  max-width: 70rem;
+  padding: 0 get-size("500");
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
 }

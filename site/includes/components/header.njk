@@ -1,17 +1,9 @@
-<header class="header wrapper box-flex pb-900 page-header">
-	<div class="header-inner inner mobileL:box-flex">
-		{% include "components/logo.njk" %}
-		{% include "components/nav.njk" %}
-	</div>
-    <h1 class="page-title">
-		<div class="fancy-border-radius fbr-sep"></div>
-		{{ title }}
-	</h1>
-		
-		{% if sub_heading %}
-
-			<p class="sub-heading">{{ sub_heading }}</p>
-
-		{% endif %}
-
+<header class="header-wrapper box-flex pb-900 page-header">
+  <div class="header-inner inner mobileL:box-flex">
+    {% include "components/logo.njk" %} {% include "components/nav.njk" %}
+  </div>
+  <h1 class="page-title">
+    <div class="fancy-border-radius fbr-sep"></div>
+    {{ title }}
+  </h1>
 </header>

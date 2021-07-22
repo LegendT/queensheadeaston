@@ -1020,7 +1020,8 @@ a:not([class]):hover {
   outline-offset: 0.25rem;
 }
 
-.wrapper {
+.header-wrapper {
+  max-width: 100%;
   min-height: 70vh;
   flex-direction: column;
   background-attachment: fixed;
@@ -1033,10 +1034,23 @@ a:not([class]):hover {
 }
 
 @media (min-width : 40em) {
-  .wrapper {
+  .header-wrapper {
     padding-bottom: 0;
   }
 }
+/**
+ * WRAPPER
+ * Sets a max width, adds a consisten gutter and horizontally
+ * centers the contents
+ */
+.wrapper {
+  max-width: 70rem;
+  padding: 0 1.25rem;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
 header {
   position: relative;
   z-index: 2;
@@ -1329,6 +1343,50 @@ header {
 }
 .page-contact .fancy-border-radius.fbr-sep {
   margin-right: -50px;
+}
+
+.featured__item {
+  display: block;
+}
+.featured__action {
+  text-align: center;
+}
+@media (min-width : 48em) {
+  .featured__inner {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 1.95rem 1.25rem;
+  }
+  @supports (display: grid) {
+    .featured__inner > * {
+      margin: 0;
+    }
+  }
+  .featured__inner img {
+    max-height: 25rem;
+  }
+  .featured__intro {
+    grid-column: 1/13;
+    align-self: center;
+    position: relative;
+  }
+  .featured__item:nth-child(odd) {
+    grid-column: 1/8;
+  }
+  .featured__item:nth-child(even) {
+    grid-column: 13/6;
+  }
+}
+@media (min-width : 64em) {
+  .featured {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .featured__intro:nth-child(odd), .featured__item:nth-child(odd) {
+    grid-column: 1/7;
+  }
+  .featured__intro:nth-child(even), .featured__item:nth-child(even) {
+    grid-column: 13/7;
+  }
 }
 
 .type-post .length-optimal {
