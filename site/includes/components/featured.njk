@@ -11,19 +11,24 @@
             </p>
           </div>
           {% for item in collections.featured %}
-          <a
-            href="{{ item.url }}"
-            aria-label="See {{ item.data.name }}"
-            class="[ featured__item ] [ frame ]"
-            data-frame="quaternary"
-          >
-            <img
-              src="{{ item.data.poster.src }}"
-              alt="{{ item.data.poster.alt }}"
-              loading="lazy"
-              class="radius"
-            />
-          </a>
+          <div class="[ featured__item frame ] [ flow ] data-frame='primary'">
+            <a
+              href="{{ item.url }}"
+              aria-label="See {{ item.data.name }}"
+              data-frame="quaternary"
+            >
+              <img
+                src="{{ item.data.poster.src }}"
+                alt="{{ item.data.poster.alt }}"
+                loading="lazy"
+                class="radius"
+              />
+            </a>
+            <h2>{{ item.data.name }}</h2>
+            <time datetime="{{ item.data.date }}">{{
+              item.data.date | dateDisplay
+            }}</time>
+          </div>
           {% endfor %}
         </div>
         <div class="[ featured__action ] [ flow-space-700 ]">
