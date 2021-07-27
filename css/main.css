@@ -1390,7 +1390,10 @@ header {
 }
 
 .featured__item {
-  display: block;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 .featured__action {
   text-align: center;
@@ -1406,8 +1409,12 @@ header {
       margin: 0;
     }
   }
+  .featured__inner a {
+    margin-right: 1rem;
+    border: none;
+  }
   .featured__inner img {
-    max-height: 25rem;
+    max-height: 20rem;
   }
   .featured__intro {
     grid-column: 1/13;

@@ -1,6 +1,9 @@
 .featured {
   &__item {
-    display: block;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
   }
 
   &__action {
@@ -18,8 +21,12 @@
           margin: 0;
         }
       }
+      a {
+        margin-right: 1rem;
+        border: none;
+      }
       img {
-        max-height: 25rem;
+        max-height: 20rem;
       }
     }
 
