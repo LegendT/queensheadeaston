@@ -3,43 +3,69 @@ layout: base
 ---
 
 <main id="main" class="main box-flex pb-1100" tabindex="-1">
+  <article id="container-centre" class="column centre">
+    <div class="content flow">
+      {{ content | safe }}
 
-    <article id="container-centre" class="column centre">
-
-        <div class="content flow">
-
-            {{ content | safe }}
-
-            <form class="form pt-400">
-
-                <div class="row mb-500">
-                    <label class="text-400 weight-bold" for="name">Name</label>
-                    <input class="input width-full" id="name" type="text" name="name" autocomplete="name" required>
-                </div>
-
-                <div class="row mb-500">
-                    <label class="text-400 weight-bold" for="email">Email</label>
-                    <input class="input width-full" id="email" type="text" name="email" autocapitalize="off" autocomplete="email" required>
-                </div>
-
-                <div class="row mb-500">
-                    <label class="text-400 weight-bold" for="phone">Phone</label>
-                    <input class="input width-full" id="phone" type="text" name="phone" autocomplete="tel" required>
-                </div>
-
-                <div class="row mb-800">
-                    <label class="text-400 weight-bold" for="message">Message</label>
-                    <textarea class="textarea width-full" id="message" name="message"></textarea>
-                </div>
-
-                <div class="row">
-                    <button class="button text-400" type="submit">Send message</button>
-                </div>
-
-            </form>
-
+      <form
+        class="form pt-400"
+        accept-charset="UTF-8"
+        action="https://getform.io/f/cbb00e16-59c4-467a-ae0a-1747563e7aac"
+        method="POST"
+        enctype="multipart/form-data"
+        target="_blank"
+        id="2621"
+      >
+        <div class="row mb-500">
+          <label class="text-400 weight-bold" for="name">Name</label>
+          <input
+            class="input width-full"
+            id="name"
+            type="text"
+            name="name"
+            autocomplete="name"
+            required
+          />
         </div>
 
-    </article>
+        <div class="row mb-500">
+          <label class="text-400 weight-bold" for="email">Email</label>
+          <input
+            class="input width-full"
+            id="email"
+            type="text"
+            name="email"
+            autocapitalize="off"
+            autocomplete="email"
+            required
+          />
+        </div>
 
+        <div class="row mb-500">
+          <label class="text-400 weight-bold" for="phone">Phone</label>
+          <input
+            class="input width-full"
+            id="phone"
+            type="text"
+            name="phone"
+            autocomplete="tel"
+            required
+          />
+        </div>
+
+        <div class="row mb-800">
+          <label class="text-400 weight-bold" for="message">Message</label>
+          <textarea
+            class="textarea width-full"
+            id="message"
+            name="message"
+          ></textarea>
+        </div>
+
+        <div class="row">
+          <button class="button text-400" type="submit">Send message</button>
+        </div>
+      </form>
+    </div>
+  </article>
 </main>
