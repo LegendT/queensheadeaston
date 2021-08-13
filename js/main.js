@@ -34,7 +34,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var Lazyload = function Lazyload() {
   // lazyload our images
-  var images = _utilities_selectors__WEBPACK_IMPORTED_MODULE_0__.default.wrapper.querySelectorAll('[data-src]');
+  var images = _utilities_selectors__WEBPACK_IMPORTED_MODULE_0__.default.wrapper.querySelectorAll("[data-src]");
 
   if ((0,_utilities_helpers__WEBPACK_IMPORTED_MODULE_1__.exists)(images)) {
     // options
@@ -48,8 +48,8 @@ var Lazyload = function Lazyload() {
       img.src = src; // add a class of loaded
       // we can then use this as a hook for fade-in animations etc
 
-      img.classList.add('loaded');
-      img.removeAttribute('data-src');
+      img.classList.add("loaded");
+      img.removeAttribute("data-src");
     };
 
     var lazyLoad = new IntersectionObserver(function (entries, lazyLoad) {

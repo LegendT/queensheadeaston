@@ -1005,9 +1005,9 @@ ul {
 }
 
 time[datetime] {
+  display: inline-block;
   color: #01093c;
   font-size: 1.56rem;
-  font-style: italic;
 }
 
 a {
@@ -1438,6 +1438,10 @@ header {
   .featured__intro:nth-child(even), .featured__item:nth-child(even) {
     grid-column: 13/7;
   }
+}
+
+.affiliations {
+  font-style: italic;
 }
 
 .type-post .length-optimal {

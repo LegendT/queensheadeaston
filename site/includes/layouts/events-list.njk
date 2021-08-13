@@ -1,61 +1,63 @@
 ---
 layout: base
 pagination:
- data: collections.qhevents
- size: 3
- alias: qhe
+  data: collections.qhevents
+  size: 3
+  alias: qhe
 ---
 
 <main id="main" class="main box-flex pb-1100" tabindex="-1">
-    <div class="bg-white pt-1100 pb-1100">
+  <div class="bg-white pt-1100 pb-1100">
+    <div class="posts inner box-grid">
+      {% for event in qhe %}
 
-        <div class="posts inner box-grid">
+      <article class="card">
+        {# post image #} {% if event.data.poster.src %}
+        <span class="card-header box-block">
+          <span class="card-categories">
+            {% for item in event.data.tags %} {%- if item !== 'blog' -%}
 
-            {% for event in qhe %}
+            <span
+              class="category box-block bg-secondary color-primary text-300"
+              >{{ item | capitalize }}</span
+            >
 
-               <article class="card">
+            {%- endif -%} {% endfor %}
+          </span>
 
-                    {# post image #}
-                    {% if event.data.poster.src %}
-                            <span class="card-header box-block">
+          <img
+            class="card-image lazy"
+            src="{{ event.data.poster.src }}"
+            alt="{{ post.data.poster.alt }}"
+          />
+        </span>
 
-                                <span class="card-categories">
+        {% endif %}
 
-                                    {% for item in event.data.tags %}
+        <div class="card-content pt-700 pb-900 pl-300 pr-300">
+          <h2>
+            <a
+              class="
+                card-title-link
+                color-primary
+                weight-regular
+                hover-color-secondary
+              "
+              href="{{ event.url }}"
+              >{{ event.data.name }}</a
+            >
+          </h2>
 
-                                        {%- if item !== 'blog' -%}
-                                            
-                                            <span class="category box-block bg-secondary color-primary text-300">{{ item | capitalize }}</span>
-                                            
-
-                                        {%- endif -%}
-
-                                    {% endfor %}
-
-                                </span>
-
-                                <img class="card-image" src="{{ event.data.poster.src }}" alt="{{ post.data.poster.alt }}">
-
-                            </span>
-
-                    {% endif %}
-
-                    <div class="card-content pt-700 pb-900 pl-300 pr-300">
-
-                        <h2><a class="card-title-link color-primary weight-regular hover-color-secondary" href="{{ event.url }}">{{ event.data.name }}</a></h2>
-
-                        <time class="datetime color-grey text-400" datetime="{{ event.data.dayDate | timestamp }}">
-                            {{ event.data.dayDate }}
-                        </time>
-
-                    </div>
-
-                </article>
-
-            {% endfor %}
-
+          <time
+            class="datetime color-grey text-400"
+            datetime="{{ event.data.dayDate | timestamp }}"
+          >
+            {{ event.data.dayDate }}
+          </time>
         </div>
+      </article>
 
+      {% endfor %}
     </div>
-
+  </div>
 </main>

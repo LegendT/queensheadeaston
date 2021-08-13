@@ -47,7 +47,7 @@ ul {
 }
 // Generic styles
 time[datetime] {
+  display: inline-block;
   color: get-color("primary");
   font-size: get-size("600");
-  font-style: italic;
 }

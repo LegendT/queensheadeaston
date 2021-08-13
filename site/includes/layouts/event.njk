@@ -1,189 +1,199 @@
 ---
 layout: base
 ---
+
 <main id="main" class="main tablet:box-flex pb-1100" tabindex="-1">
-    <article class="inner event tablet:box-flex">
-    
-        {# featured post image #}
-        {% if poster.src %}
-            <figure class="event-image bg-white pt-600 pr-600 pl-600 mb-1000">
-                <img src="{{ poster.src }}" alt="{{ poster.alt }}">
-                {% if poster.alt %}
-                    <figcaption class="post-image-caption bg-white color-primary pt-600 pb-600 text-400">
-                    <span class="sr-only">{{ poster.alt }}</span>
-                    </figcaption>
-                {% endif %}
-            </figure>
-        {% endif %}
+  <article class="inner event tablet:box-flex">
+    {# featured post image #} {% if poster.src %}
+    <figure class="event-image bg-white pt-600 pr-600 pl-600 mb-1000">
+      <img src="{{ poster.src }}" alt="{{ poster.alt }}" />
+      {% if poster.alt %}
+      <figcaption
+        class="post-image-caption bg-white color-primary pt-600 pb-600 text-400"
+      >
+        <span class="sr-only">{{ poster.alt }}</span>
+      </figcaption>
+      {% endif %}
+    </figure>
+    {% endif %}
 
-        <div class="flow length-optimal">
-
-            <div class="post-meta box-flex mt-800 text-400">
-                {% if tags %}
-                    <div class="box-flex">
-                        <ul class="categories">
-                            {# this will create a comma for multiple category links #}
-                            {% set comma = joiner() %}
-                            {% for item in tags %}
-                                {%- if item !== 'blog' -%}
-                                    <li class="category">
-                                        <a href="/categories/{{ item }}">{{ comma() }} {{ item | capitalize }}</a>
-                                    </li>
-                                {%- endif -%}
-                            {% endfor %}
-                        </ul>
-                    </div>
-                {% endif %}
-            </div>
-
-            <div class="event-headings">
-                <h2>{{ name }}</h2>
-                <h3><time class="datetime" datetime="{{ date | dateDisplay }}">{{ day }} {{date | dateDisplay }}</time></h3>
-            </div>
-            {{ description | markdownFilter | safe }}
-
+    <div class="flow length-optimal">
+      <div class="post-meta box-flex mt-800 text-400">
+        {% if tags %}
+        <div class="box-flex">
+          <ul class="categories">
+            {# this will create a comma for multiple category links #} {% set
+            comma = joiner() %} {% for item in tags %} {%- if item !== 'blog'
+            -%}
+            <li class="category">
+              <a href="/categories/{{ item }}"
+                >{{ comma() }} {{ item | capitalize }}</a
+              >
+            </li>
+            {%- endif -%} {% endfor %}
+          </ul>
         </div>
-    </article>
+        {% endif %}
+      </div>
 
-<div class="inner">    
+      <div class="event-headings">
+        <h2>{{ name }}</h2>
+        <p class="affiliations">{{ affiliations }}</p>
+        <p>
+          <time class="mt-300 datetime" datetime="{{ date | dateDisplay }}"
+            >{{ day }} {{ date | dateDisplay }}</time
+          >
+        </p>
+      </div>
+      {{ description | markdownFilter | safe }}
+    </div>
+  </article>
+
+  <div class="inner">
     <nav class="pagination pr-600 pl-600 mb-1000" aria-label="Pagination">
-        <ul class="items text-400 tablet:box-flex">
-            {% if previous_event %}<li class="mb-300"><span class="weight-bold">Previous:</span> <a href="{{ previous_post.url }}">{{ previous_event.data.title }}</a></li>{% endif %}
-            {% if next_event %}<li><span class="weight-bold">Next:</span> <a href="{{ next_event.url }}">{{ next_event.data.title }}</a></li>{% endif %}
-        </ul>
+      <ul class="items text-400 tablet:box-flex">
+        {% if previous_event %}
+        <li class="mb-300">
+          <span class="weight-bold">Previous:</span>
+          <a href="{{ previous_post.url }}">{{ previous_event.data.title }}</a>
+        </li>
+        {% endif %} {% if next_event %}
+        <li>
+          <span class="weight-bold">Next:</span>
+          <a href="{{ next_event.url }}">{{ next_event.data.title }}</a>
+        </li>
+        {% endif %}
+      </ul>
     </nav>
-</div>
-    {# schema #}
-    <script type="application/ld+json">
-        {
-        "@context": "https://schema.org",
-        "@type": "Event",
-        "name": "{{ name }}",
-        "description": "{{ description }}",
-        "about": "{{style}}",
-        "image": "{{ site.url }}{{ poster.src }}",
-        "startDate": "{{date}}T{{startTime}}",
-        "endDate": "{{date}}T{{endTime}}",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "location": {
-            "@type": "BarOrPub",
-            "url": "{{site.url}}",
-            "smokingAllowed": "true",
-            "telephone": "+44 (0)117 9020953",
-            "sameAs": [
-                "https://www.facebook.com/Queens-Head-Easton-1008716609237165/"
-            ],
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "171 Easton Road",
-                "addressLocality": "Bristol",
-                "postalCode": "BS5 0ES",
-                "addressCountry": "GB"
-            },
-            "image": "{{ site.url }}images/qh-logo.png",
-            "acceptsReservations": "No",
-            "description": "Friendly local pub  with an excellent beer selection. Freshly made Pub food and Sunday lunches. An eclectic blend of quality music played by DJ's at the weekends. Large, partially covered pub garden with heating",
-            "menu": "https://queensheadeaston.co.uk/menu/",
-            "geo": {
-                "@type": "GeoCoordinates",
-                "name": "Geo Location of The Queens Head, Easton. Bristol. BS5 0ES",
-                "latitude": "51.46190761522082, ",
-                "longitude": "-2.566608829100664"
-            },
-            "openingHoursSpecification": [
-
-                    {
-                        "@type": "OpeningHoursSpecification",
-                        "closes":  "15:00:00",
-                        "dayOfWeek": "https://schema.org/Sunday",
-                        "opens":  "12:00:00"
-                    },
-                    {
-                        "@type": "OpeningHoursSpecification",
-                        "closes":  "15:00:00",
-                        "dayOfWeek": "https://schema.org/Saturday",
-                        "opens":  "12:00:00"
-                    },
-                    {
-                        "@type": "OpeningHoursSpecification",
-                        "closes":  "00:00:00",
-                        "dayOfWeek": "https://schema.org/Saturday",
-                        "opens":  "17:00:00"
-                    },
-                    {
-                        "@type": "OpeningHoursSpecification",
-                        "closes":  "15:00:00",
-                        "dayOfWeek": "https://schema.org/Friday",
-                        "opens":  "12:00:00"
-                    },
-                    {
-                        "@type": "OpeningHoursSpecification",
-                        "closes":  "00:00:00",
-                        "dayOfWeek": "https://schema.org/Friday",
-                        "opens":  "17:00:00"
-                    },
-                    {
-                        "@type": "OpeningHoursSpecification",
-                        "closes":  "15:00:00",
-                        "dayOfWeek": "https://schema.org/Thursday",
-                        "opens":  "12:00:00"
-                    },
-                    {
-                        "@type": "OpeningHoursSpecification",
-                        "closes":  "00:00:00",
-                        "dayOfWeek": "https://schema.org/Thursday",
-                        "opens":  "17:00:00"
-                    },
-                    {
-                        "@type": "OpeningHoursSpecification",
-                        "closes":  "15:00:00",
-                        "dayOfWeek": "https://schema.org/Wednesday",
-                        "opens":  "12:00:00"
-                    },
-                    {
-                        "@type": "OpeningHoursSpecification",
-                        "closes":  "00:00:00",
-                        "dayOfWeek": "https://schema.org/Wednesday",
-                        "opens":  "17:00:00"
-                    },
-                    {
-                        "@type": "OpeningHoursSpecification",
-                        "closes":  "15:00:00",
-                        "dayOfWeek": "https://schema.org/Tuesday",
-                        "opens":  "12:00:00"
-                    },
-                    {
-                        "@type": "OpeningHoursSpecification",
-                        "closes":  "00:00:00",
-                        "dayOfWeek": "https://schema.org/Tuesday",
-                        "opens":  "17:00:00"
-                    },
-                    {
-                        "@type": "OpeningHoursSpecification",
-                        "closes":  "15:00:00",
-                        "dayOfWeek": "https://schema.org/Monday",
-                        "opens":  "12:00:00"
-                    },
-                    {
-                        "@type": "OpeningHoursSpecification",
-                        "closes":  "00:00:00",
-                        "dayOfWeek": "https://schema.org/Monday",
-                        "opens":  "17:00:00"
-                    }
-                
-            ],
-            "hasMap": "https://www.google.com/maps/place/Queens+Head+Easton/@51.4617973,-2.5688619,17z/data=!4m12!1m6!3m5!1s0x48718e4146d5ef17:0x3505f46eae2b112c!2sQueens+Head+Easton!8m2!3d51.4617736!4d-2.5666369!3m4!1s0x48718e4146d5ef17:0x3505f46eae2b112c!8m2!3d51.4617736!4d-2.5666369",
-            "servesCuisine": "English Pub Food and Sunday lunch",
-            "name": "The Queens Head",
-            "logo": "https://bakerstreetstation.files.wordpress.com/2013/10/baker-st-small.png",
-            "additionalType": "https://en.wikipedia.org/wiki/Pub"
+  </div>
+  {# schema #}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "{{ name }}",
+      "description": "{{ description }}",
+      "about": "{{style}}",
+      "image": "{{ site.url }}{{ poster.src }}",
+      "startDate": "{{date}}T{{startTime}}",
+      "endDate": "{{date}}T{{endTime}}",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "BarOrPub",
+        "url": "{{site.url}}",
+        "smokingAllowed": "true",
+        "telephone": "+44 (0)117 9020953",
+        "sameAs": [
+          "https://www.facebook.com/Queens-Head-Easton-1008716609237165/"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "171 Easton Road",
+          "addressLocality": "Bristol",
+          "postalCode": "BS5 0ES",
+          "addressCountry": "GB"
         },
-        "performer": {
-            "@type": "Person",
-            "name": "{{ name }}",
-            "organization": "{{affiliations}}"
-        }
+        "image": "{{ site.url }}images/qh-logo.png",
+        "acceptsReservations": "No",
+        "description": "Friendly local pub  with an excellent beer selection. Freshly made Pub food and Sunday lunches. An eclectic blend of quality music played by DJ's at the weekends. Large, partially covered pub garden with heating",
+        "menu": "https://queensheadeaston.co.uk/menu/",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "name": "Geo Location of The Queens Head, Easton. Bristol. BS5 0ES",
+          "latitude": "51.46190761522082, ",
+          "longitude": "-2.566608829100664"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "closes": "15:00:00",
+            "dayOfWeek": "https://schema.org/Sunday",
+            "opens": "12:00:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "closes": "15:00:00",
+            "dayOfWeek": "https://schema.org/Saturday",
+            "opens": "12:00:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "closes": "00:00:00",
+            "dayOfWeek": "https://schema.org/Saturday",
+            "opens": "17:00:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "closes": "15:00:00",
+            "dayOfWeek": "https://schema.org/Friday",
+            "opens": "12:00:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "closes": "00:00:00",
+            "dayOfWeek": "https://schema.org/Friday",
+            "opens": "17:00:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "closes": "15:00:00",
+            "dayOfWeek": "https://schema.org/Thursday",
+            "opens": "12:00:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "closes": "00:00:00",
+            "dayOfWeek": "https://schema.org/Thursday",
+            "opens": "17:00:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "closes": "15:00:00",
+            "dayOfWeek": "https://schema.org/Wednesday",
+            "opens": "12:00:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "closes": "00:00:00",
+            "dayOfWeek": "https://schema.org/Wednesday",
+            "opens": "17:00:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "closes": "15:00:00",
+            "dayOfWeek": "https://schema.org/Tuesday",
+            "opens": "12:00:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "closes": "00:00:00",
+            "dayOfWeek": "https://schema.org/Tuesday",
+            "opens": "17:00:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "closes": "15:00:00",
+            "dayOfWeek": "https://schema.org/Monday",
+            "opens": "12:00:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "closes": "00:00:00",
+            "dayOfWeek": "https://schema.org/Monday",
+            "opens": "17:00:00"
+          }
+        ],
+        "hasMap": "https://www.google.com/maps/place/Queens+Head+Easton/@51.4617973,-2.5688619,17z/data=!4m12!1m6!3m5!1s0x48718e4146d5ef17:0x3505f46eae2b112c!2sQueens+Head+Easton!8m2!3d51.4617736!4d-2.5666369!3m4!1s0x48718e4146d5ef17:0x3505f46eae2b112c!8m2!3d51.4617736!4d-2.5666369",
+        "servesCuisine": "English Pub Food and Sunday lunch",
+        "name": "The Queens Head",
+        "logo": "https://bakerstreetstation.files.wordpress.com/2013/10/baker-st-small.png",
+        "additionalType": "https://en.wikipedia.org/wiki/Pub"
+      },
+      "performer": {
+        "@type": "Person",
+        "name": "{{ name }}",
+        "organization": "{{affiliations}}"
+      }
     }
-    </script>
+  </script>
 </main>
-

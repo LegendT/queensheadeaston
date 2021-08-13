@@ -18,10 +18,10 @@ startTime: '20:00'
 endTime: '23:30'
 style: 'Eclectic musical journey'
 displayOrder: 1
-featured: true
+featured: false
 poster:
-    src: '/images/posters/QH-Matt-A-18-06-21.png'
-    alt: 'Matt Anniss poster'
+  src: '/images/posters/QH-Matt-A-18-06-21.png'
+  alt: 'Matt Anniss poster'
 tags:
     - event
 ---
