@@ -7,5 +7,5 @@ robots: noindex,follow
 title: Events
 eleventyNavigation:
   key: Events
-  order: 4
+  order: 2
 ---

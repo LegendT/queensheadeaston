@@ -7,7 +7,7 @@ robots: noindex,follow
 title: The blog
 eleventyNavigation:
   key: Blog
-  order: 3
+  order: 4
 ---
 
 A place to voice our useless opinions.
