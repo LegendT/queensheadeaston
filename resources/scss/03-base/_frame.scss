@@ -34,4 +34,12 @@ $frame-colors: ("primary", "secondary", "tertiary", "grey");
       }
     }
   }
+  &.featured__item::before {
+    @include media-query("tablet") {
+      bottom: -0.5rem;
+      top: 0.5rem;
+      left: -0.5rem;
+      border-width: 0.25rem;
+    }
+  }
 }

@@ -13,10 +13,8 @@ eleventyNavigation:
 
 ## Welcome
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus!
+A one bar pub in a residential area close to several breweries in East Bristol. The L-shaped bar is simply furnished, with flagstone floors and high stools at the bar and the front window. Power and USB charging points are available above the shelf looking out onto the road.
 
-Ad dolore dignissimos asperiores dicta facere optio quod commodi nam tempore recusandae. Rerum sed nulla eum vero expedita ex delectus voluptates rem at neque quos facere sequi unde optio aliquam!
+The furnishings are simple, and the clientele made up of locals. Children are welcome until 7.30. There is a small garden at the rear and a large garden to the side with BBQs.
 
-Tenetur quod quidem in voluptatem corporis dolorum dicta sit pariatur porro quaerat autem ipsam odit quam beatae tempora quibusdam illum! Modi velit odio nam nulla unde amet odit pariatur at!
-
-Consequatur rerum amet fuga expedita sunt et tempora saepe? Iusto nihil explicabo perferendis quos provident delectus ducimus necessitatibus reiciendis optio tempora unde earum doloremque commodi laudantium ad nulla vel odio?
+Music and DJs most weekends.
