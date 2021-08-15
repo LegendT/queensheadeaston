@@ -1,103 +1,131 @@
-const navigation = require('@11ty/eleventy-navigation');
-const dates = require('./utilities/filters/dates');
-const markdownFilter = require('./utilities/filters/parse-markdown');
-const helpers = require('./utilities/filters/helpers');
-const path = require('path');
-const sortByDisplayOrder = require('./utilities/filters/sort-by-display-order.js');
+const navigation = require("@11ty/eleventy-navigation");
+const dates = require("./utilities/filters/dates");
+const markdownFilter = require("./utilities/filters/parse-markdown");
+const helpers = require("./utilities/filters/helpers");
+const path = require("path");
+const sortByDisplayOrder = require("./utilities/filters/sort-by-display-order.js");
 
 module.exports = (config) => {
-	// navigation plugin
-	config.addPlugin(navigation);
+  // navigation plugin
+  config.addPlugin(navigation);
 
-	// Human readable date for posts
-	config.addFilter('dateDisplay', dates.friendly);
+  // Human readable date for posts
+  config.addFilter("dateDisplay", dates.friendly);
 
-	// Timestamp for datetime element
-	config.addFilter('timestamp', dates.timestamp);
+  // Timestamp for datetime element
+  config.addFilter("timestamp", dates.timestamp);
 
-	// Remove whitespace from a string
-	config.addNunjucksFilter('spaceless', helpers.spaceless);
+  // Remove whitespace from a string
+  config.addNunjucksFilter("spaceless", helpers.spaceless);
 
-	// Parsing Markdown in Front Matter.
-	config.addFilter('markdownFilter', markdownFilter);
+  // Parsing Markdown in Front Matter.
+  config.addFilter("markdownFilter", markdownFilter);
 
-	// Minify our HTML
-	config.addTransform('htmlminify', require('./utilities/transforms/htmlminify'));
+  // Minify our HTML
+  config.addTransform(
+    "htmlminify",
+    require("./utilities/transforms/htmlminify")
+  );
 
-	// Returns event items, sorted by display order then filtered by featured
-	config.addCollection('featured', (collection) => {
-		return sortByDisplayOrder(collection.getFilteredByGlob('./site/events/*.md')).filter((x) => x.data.featured);
-	});
+  // Returns event items, sorted by display order then filtered by featured
+  config.addCollection("featured", (collection) => {
+    const featuredList = collection.getFilteredByGlob("./site/events/*.md");
 
-	// Collections
-	config.addCollection('blog', (collection) => {
-		const blogs = collection.getFilteredByTag('blog');
+    return featuredList.filter((x) => x.data.featured);
+  });
 
-		for (let i = 0; i < blogs.length; i++) {
-			const previous_post = blogs[i - 1];
-			const next_post = blogs[i + 1];
+  // Collections
+  config.addCollection("blog", (collection) => {
+    const blogs = collection.getFilteredByTag("blog");
 
-			blogs[i].data['previous_post'] = previous_post;
-			blogs[i].data['next_post'] = next_post;
-		}
+    for (let i = 0; i < blogs.length; i++) {
+      const previous_post = blogs[i - 1];
+      const next_post = blogs[i + 1];
 
-		return blogs.reverse();
-	});
+      blogs[i].data["previous_post"] = previous_post;
+      blogs[i].data["next_post"] = next_post;
+    }
 
-	config.addCollection('qhevents', (collection) => {
-		const events = collection.getFilteredByTag('event');
+    return blogs.reverse();
+  });
 
-		for (let i = 0; i < events.length; i++) {
-			const previous_event = events[i - 1];
-			const next_event = events[i + 1];
+  config.addCollection("futureEvents", (collection) => {
+    const futureEvents = collection.getFilteredByTag("event");
 
-			events[i].data['previous_event'] = previous_event;
-			events[i].data['next_event'] = next_event;
-		}
+    for (let i = 0; i < futureEvents.length; i++) {
+      const previous_event = futureEvents[i - 1];
+      const next_event = futureEvents[i + 1];
 
-		return events.reverse();
-	});
+      futureEvents[i].data["previous_event"] = previous_event;
+      futureEvents[i].data["next_event"] = next_event;
+    }
+    let now = new Date().getTime();
+    return futureEvents.filter((p) => {
+      if (now < p.date.getTime()) return true;
+      return false;
+    });
+    //return futureEvents;
+  });
 
-	// Categories collection
-	config.addCollection('categories', (collection) => {
-		const list = new Set();
+  config.addCollection("pastEvents", (collection) => {
+    const pastEvents = collection.getFilteredByTag("event");
 
-		collection.getAll().forEach((item) => {
-			if (!item.data.tags) return;
+    for (let i = 0; i < pastEvents.length; i++) {
+      const previous_event = pastEvents[i - 1];
+      const next_event = pastEvents[i + 1];
 
-			item.data.tags
-				.filter((category) => !['blog', 'all'].includes(category))
-				.forEach((category) => list.add(category));
-		});
+      pastEvents[i].data["previous_event"] = previous_event;
+      pastEvents[i].data["next_event"] = next_event;
+    }
+    let now = new Date().getTime();
+    return pastEvents.filter((p) => {
+      if (now < p.date.getTime()) return false;
+      return true;
+    });
 
-		return Array.from(list).sort();
-	});
+    //return pastEvents;
+  });
+  // Categories collection
+  config.addCollection("categories", (collection) => {
+    const list = new Set();
 
-	// Layout aliases
-	config.addLayoutAlias('base', 'layouts/base.njk');
-	config.addLayoutAlias('home', 'layouts/home.njk');
-	config.addLayoutAlias('page', 'layouts/page.njk');
-	config.addLayoutAlias('blog', 'layouts/blog.njk');
-	config.addLayoutAlias('post', 'layouts/post.njk');
-	config.addLayoutAlias('contact', 'layouts/contact.njk');
-	config.addLayoutAlias('category', 'layouts/category.njk');
-	config.addLayoutAlias('events', 'layouts/events-list.njk');
-	config.addLayoutAlias('event', 'layouts/event.njk');
+    collection.getAll().forEach((item) => {
+      if (!item.data.tags) return;
 
-	// Include our static assets
-	config.addPassthroughCopy('css');
-	config.addPassthroughCopy('js');
-	config.addPassthroughCopy('images');
-	config.addPassthroughCopy('favicon.png');
-	config.addPassthroughCopy('favicon.svg');
+      item.data.tags
+        .filter((category) => !["blog", "all"].includes(category))
+        .forEach((category) => list.add(category));
+    });
 
-	return {
-		markdownTemplateEngine: 'njk',
-		dir: {
-			input: 'site',
-			output: 'public',
-			includes: 'includes',
-			data: 'globals',
-		},
-	};
+    return Array.from(list).sort();
+  });
+
+  // Layout aliases
+  config.addLayoutAlias("base", "layouts/base.njk");
+  config.addLayoutAlias("home", "layouts/home.njk");
+  config.addLayoutAlias("page", "layouts/page.njk");
+  config.addLayoutAlias("blog", "layouts/blog.njk");
+  config.addLayoutAlias("post", "layouts/post.njk");
+  config.addLayoutAlias("contact", "layouts/contact.njk");
+  config.addLayoutAlias("category", "layouts/category.njk");
+  config.addLayoutAlias("events", "layouts/events-list.njk");
+  config.addLayoutAlias("events-past", "layouts/events-list-past.njk");
+  config.addLayoutAlias("event", "layouts/event.njk");
+
+  // Include our static assets
+  config.addPassthroughCopy("css");
+  config.addPassthroughCopy("js");
+  config.addPassthroughCopy("images");
+  config.addPassthroughCopy("favicon.png");
+  config.addPassthroughCopy("favicon.svg");
+
+  return {
+    markdownTemplateEngine: "njk",
+    dir: {
+      input: "site",
+      output: "public",
+      includes: "includes",
+      data: "globals",
+    },
+  };
 };

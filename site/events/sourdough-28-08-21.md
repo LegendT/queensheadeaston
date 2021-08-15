@@ -9,8 +9,8 @@ eat the beat records counter jocks James and Paul, now running Sourdough Disco p
 - https://www.facebook.com/sourdoughdisco
 "
 day: 'Saturday'
-date: 2021-08-21
-startTime: '20:00'
+date: 2021-08-28
+startTime: '19:00'
 endTime: '23:30'
 style: 'Electic'
 displayOrder: 2

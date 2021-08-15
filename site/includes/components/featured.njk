@@ -11,23 +11,28 @@
             </p>
           </div>
           {% for item in collections.featured %}
-          <div class="[ featured__item frame ] data-frame='primary'">
-            <a
-              href="{{ item.url }}"
-              aria-label="See {{ item.data.name }}"
-              data-frame="quaternary"
-            >
-              <img
-                src="{{ item.data.poster.src }}"
-                alt="{{ item.data.poster.alt }}"
-                loading="lazy"
-                class="radius"
-              />
-            </a>
-            <h2>{{ item.data.name }}</h2>
-            <time datetime="{{ item.data.date }}">{{
-              item.data.date | dateDisplay
-            }}</time>
+          <div
+            class="[ featured__item frame ] [ clickable ] data-frame='primary'"
+          >
+            <div class="[ featured__image ]">
+              <a
+                href="{{ item.url }}"
+                aria-label="See {{ item.data.name }}"
+                data-frame="quaternary"
+              >
+                <img
+                  src="{{ item.data.poster.src }}"
+                  alt="{{ item.data.poster.alt }}"
+                  class="radius"
+                />
+              </a>
+            </div>
+            <div class="[ featured__content ]">
+              <h2>{{ item.data.name }}</h2>
+              <time datetime="{{ item.data.date }}">{{
+                item.data.date | dateDisplay
+              }}</time>
+            </div>
           </div>
           {% endfor %}
         </div>

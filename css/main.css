@@ -1046,8 +1046,9 @@ a:not([class]):hover {
 }
 @media (min-width : 48em) {
   .frame::before {
-    top: -0.5rem;
-    left: -0.5rem;
+    bottom: -1.5rem;
+    top: 0.9rem;
+    left: -0.9rem;
     border-width: 0.25rem;
   }
 }
@@ -1391,9 +1392,10 @@ header {
 
 .featured__item {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 .featured__action {
   text-align: center;

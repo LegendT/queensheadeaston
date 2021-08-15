@@ -1,11 +1,8 @@
 ---
-layout: events
-meta_title: Events
+layout: events-past
+meta_title: Past Events
 meta_description: The Queens Head, Easton. Bristol - Events
 hide_from_sitemap: true
 robots: noindex,follow
-title: Events
-eleventyNavigation:
-  key: Events
-  order: 4
+title: Past Events
 ---

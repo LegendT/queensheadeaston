@@ -1,5 +1,4 @@
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./resources/js/main.js":
@@ -8,65 +7,15 @@
   \******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_mobile_nav__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @modules/mobile-nav */ "./resources/js/modules/mobile-nav/index.js");
-/* harmony import */ var _modules_lazyload__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @modules/lazyload */ "./resources/js/modules/lazyload/index.js");
+/* harmony import */ var _utilities_clickable_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @utilities/clickable.js */ "./resources/js/utilities/clickable.js");
+/* harmony import */ var _utilities_clickable_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_utilities_clickable_js__WEBPACK_IMPORTED_MODULE_1__);
 // Import local modules
+ //import '@modules/lazyload'
 
 
-
-/***/ }),
-
-/***/ "./resources/js/modules/lazyload/index.js":
-/*!************************************************!*\
-  !*** ./resources/js/modules/lazyload/index.js ***!
-  \************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _utilities_selectors__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @utilities/selectors */ "./resources/js/utilities/selectors/index.js");
-/* harmony import */ var _utilities_helpers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @utilities/helpers */ "./resources/js/utilities/helpers/index.js");
-
-
-
-var Lazyload = function Lazyload() {
-  // lazyload our images
-  var images = _utilities_selectors__WEBPACK_IMPORTED_MODULE_0__.default.wrapper.querySelectorAll("[data-src]");
-
-  if ((0,_utilities_helpers__WEBPACK_IMPORTED_MODULE_1__.exists)(images)) {
-    // options
-    var options = {
-      threshold: 0.5
-    };
-
-    var preloadImage = function preloadImage(img) {
-      // find and store the image's data-load attribute
-      var src = img.dataset.src;
-      img.src = src; // add a class of loaded
-      // we can then use this as a hook for fade-in animations etc
-
-      img.classList.add("loaded");
-      img.removeAttribute("data-src");
-    };
-
-    var lazyLoad = new IntersectionObserver(function (entries, lazyLoad) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          preloadImage(entry.target);
-          lazyLoad.unobserve(entry.target);
-        }
-      });
-    }, options);
-    images.forEach(function (image) {
-      lazyLoad.observe(image);
-    });
-  }
-}();
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Lazyload);
 
 /***/ }),
 
@@ -76,6 +25,7 @@ var Lazyload = function Lazyload() {
   \**************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -100,46 +50,30 @@ var MobileNav = function MobileNav() {
 
 /***/ }),
 
-/***/ "./resources/js/utilities/helpers/index.js":
-/*!*************************************************!*\
-  !*** ./resources/js/utilities/helpers/index.js ***!
-  \*************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ "./resources/js/utilities/clickable.js":
+/*!*********************************************!*\
+  !*** ./resources/js/utilities/clickable.js ***!
+  \*********************************************/
+/***/ (() => {
 
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "page": () => (/* binding */ page),
-/* harmony export */   "exists": () => (/* binding */ exists)
-/* harmony export */ });
-/* harmony import */ var _utilities_selectors__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @utilities/selectors */ "./resources/js/utilities/selectors/index.js");
+var cards = document.querySelectorAll(".clickable");
+Array.prototype.forEach.call(cards, function (card) {
+  var down,
+      up,
+      link = card.querySelector(".clickable a");
 
-/**
- * @description Test if the body id is something
- * @param  		{string}
- * @return 		{bool}
- *
- */
+  card.onmousedown = function () {
+    return down = +new Date();
+  };
 
-var page = function page(name) {
-  if (!name) {
-    return _utilities_selectors__WEBPACK_IMPORTED_MODULE_0__.default.body.getAttribute('id');
-  }
+  card.onmouseup = function () {
+    up = +new Date();
 
-  return _utilities_selectors__WEBPACK_IMPORTED_MODULE_0__.default.body.getAttribute('id') == name;
-};
-/**
- * @description Check if element exists the page
- * @param  		{string} Element selector
- * @param  		{string} Minimum number of elements
- * @return 		{bool}
- */
-
-
-var exists = function exists(el, limit) {
-  return el.length > 0;
-};
-
-
+    if (up - down < 200) {
+      link.click();
+    }
+  };
+});
 
 /***/ }),
 
@@ -149,6 +83,7 @@ var exists = function exists(el, limit) {
   \***************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -177,6 +112,7 @@ var $$ = {
   \**********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
@@ -241,6 +177,18 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 				}
 /******/ 			}
 /******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
 /******/ 		};
 /******/ 	})();
 /******/ 	
