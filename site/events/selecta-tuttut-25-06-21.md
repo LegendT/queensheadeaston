@@ -5,7 +5,7 @@ affiliations: 'Hit The North'
 description: "
 Joining Tone this week is Selecta Tuttut with a special vinyl only selection of 80's and 90's music"
 day: 'Friday'
-date: 2021-16-07
+date: 2021-07-16
 startTime: '20:00'
 endTime: '23:30'
 style: "80's and 90's"

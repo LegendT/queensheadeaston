@@ -34,12 +34,9 @@
         >
       </h2>
 
-      <time
-        class="datetime color-grey text-400"
-        datetime="{{ event.data.dayDate | timestamp }}"
+      <time class="mt-300 datetime" datetime="{{ date | dateDisplay }}"
+        >{{ event.data.day }} {{ event.data.date | dateDisplay }}</time
       >
-        {{ event.data.dayDate }}
-      </time>
     </div>
   </article>
 

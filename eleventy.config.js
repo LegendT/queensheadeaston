@@ -50,7 +50,7 @@ module.exports = (config) => {
   });
 
   config.addCollection("futureEvents", (collection) => {
-    const futureEvents = collection.getFilteredByTag("event").reverse();
+    const futureEvents = collection.getFilteredByTag("event");
 
     for (let i = 0; i < futureEvents.length; i++) {
       const previous_event = futureEvents[i - 1];
