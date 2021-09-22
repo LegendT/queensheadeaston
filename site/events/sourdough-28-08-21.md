@@ -1,4 +1,5 @@
 ---
+layout: event
 name: 'Sourdough Disco'
 affiliations: ''
 description: "
@@ -14,7 +15,7 @@ startTime: '19:00'
 endTime: '23:30'
 style: 'Electic'
 displayOrder: 2
-featured: true
+featured: false
 poster:
   src: '/images/posters/QH-28-08-21-sourdough.png'
   alt: 'Sourdough Disco poster. Date: 28-08-21'

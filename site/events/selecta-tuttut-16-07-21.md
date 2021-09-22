@@ -1,4 +1,5 @@
 ---
+layout: event
 name: 'Selecta Tuttut'
 affiliations: 'Hit The North'
 description: "

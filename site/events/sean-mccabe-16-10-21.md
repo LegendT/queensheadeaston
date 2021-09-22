@@ -9,15 +9,15 @@ description: "Bristol-based producer Sean McCabe has amassed an impressive disco
 
 "
 day: 'Saturday'
-date: 2021-09-04
+date: 2021-10-16
 startTime: '20:00'
 endTime: '23:30'
 style: 'Soulful House, Garage, Disco'
 displayOrder: 3
-featured: false
+featured: true
 poster:
-  src: '/images/posters/QH-04-09-21-sean-mccabe.png'
-  alt: 'Sean McCabe poster. Date: 04-09-21'
+  src: '/images/posters/QH-16-10-21-sean-mccabe.png'
+  alt: 'Sean McCabe poster. Date: 16-10-21'
 tags:
     - event
 ---

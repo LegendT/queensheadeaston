@@ -36,7 +36,7 @@ module.exports = (config) => {
 
   // Collections
   config.addCollection("blog", (collection) => {
-    const blogs = collection.getFilteredByTag("blog");
+    const blogs = collection.getFilteredByTag("blog").reverse();
 
     for (let i = 0; i < blogs.length; i++) {
       const previous_post = blogs[i - 1];
@@ -50,7 +50,7 @@ module.exports = (config) => {
   });
 
   config.addCollection("futureEvents", (collection) => {
-    const futureEvents = collection.getFilteredByTag("event");
+    const futureEvents = collection.getFilteredByTag("event").reverse();
 
     for (let i = 0; i < futureEvents.length; i++) {
       const previous_event = futureEvents[i - 1];
@@ -68,7 +68,7 @@ module.exports = (config) => {
   });
 
   config.addCollection("pastEvents", (collection) => {
-    const pastEvents = collection.getFilteredByTag("event");
+    const pastEvents = collection.getFilteredByTag("event").reverse();
 
     for (let i = 0; i < pastEvents.length; i++) {
       const previous_event = pastEvents[i - 1];

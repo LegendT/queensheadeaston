@@ -1,4 +1,5 @@
 ---
+layout: event
 name: 'Matt Anniss'
 affiliations: Join The Future, Bedmo Disco, Best Before
 description: "
