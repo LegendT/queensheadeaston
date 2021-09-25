@@ -70,7 +70,7 @@ module.exports = (config) => {
   config.addCollection("pastEvents", (collection) => {
     const pastEvents = collection.getFilteredByTag("event").reverse();
 
-    for (let i = 0; i < pastEvents.length; i++) {
+    for (let i = 0; i > pastEvents.length; i++) {
       const previous_event = pastEvents[i - 1];
       const next_event = pastEvents[i + 1];
 

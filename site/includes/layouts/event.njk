@@ -55,12 +55,12 @@ layout: base
         {% if previous_event %}
         <li class="mb-300">
           <span class="weight-bold">Previous:</span>
-          <a href="{{ previous_post.url }}">{{ previous_event.data.title }}</a>
+          <a href="{{ previous_event.url }}">{{ previous_event.data.name }}</a>
         </li>
         {% endif %} {% if next_event %}
         <li>
           <span class="weight-bold">Next:</span>
-          <a href="{{ next_event.url }}">{{ next_event.data.title }}</a>
+          <a href="{{ next_event.url }}">{{ next_event.data.name }}</a>
         </li>
         {% endif %}
       </ul>
