@@ -4,13 +4,6 @@
   <article class="[ card frame ] [ clickable ]">
     {# post image #} {% if event.data.poster.src %}
     <span class="card-header box-block">
-      <span class="card-categories">
-        {% for item in event.data.tags %} {%- if item !== 'blog' -%}
-        <span class="category box-block bg-secondary color-primary text-300">{{
-          item | capitalize
-        }}</span>
-        {%- endif -%} {% endfor %}
-      </span>
       <img
         class="card-image"
         src="{{ event.data.poster.src }}"

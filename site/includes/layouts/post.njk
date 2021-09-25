@@ -3,84 +3,62 @@ layout: base
 ---
 
 <main id="main" class="main box-flex pb-1100" tabindex="-1">
+  <article id="container-centre" class="column centre">
+    <header class="page-header length-optimal mb-1000 pb-500">
+      <h1 class="post-title">{{ title }}</h1>
 
-    <article id="container-centre" class="column centre">
+      {% if sub_heading %}
 
-        <header class="page-header length-optimal mb-1000 pb-500">
+      <p class="sub-heading">{{ sub_heading }}</p>
 
-            <h1 class="post-title">{{ title }}</h1>
+      {% endif %}
 
-            {% if sub_heading %}
+      <div class="post-meta box-flex mt-800 text-400">
+        <time class="datetime" datetime="{{ date | timestamp }}">{{
+          date | dateDisplay
+        }}</time>
+      </div>
+    </header>
 
-                <p class="sub-heading">{{ sub_heading }}</p>
+    {# featured post image #} {% if post_image %}
 
-            {% endif %}
+    <figure class="post-image bg-white pt-600 pr-600 pl-600 mb-1000">
+      <img data-src="{{ post_image }}" alt="{{ image_alt }}" />
 
-            <div class="post-meta box-flex mt-800 text-400">
+      {% if image_alt %}
+      <figcaption
+        class="post-image-caption bg-white color-primary pt-600 pb-600 text-400"
+      >
+        {{ image_alt }}
+      </figcaption>
+      {% endif %}
+    </figure>
 
-                <time class="datetime" datetime="{{ date | timestamp }}">{{ date | dateDisplay }}</time>
+    {% endif %}
 
-                {% if tags %}
+    <div class="content flow length-optimal">
+      {{ content | safe }}
 
-                    <div class="box-flex">
+      <nav class="pagination mb-1000" aria-label="Pagination">
+        <ul class="items text-400 tablet:box-flex">
+          {% if previous_post %}
+          <li class="mb-300">
+            <span class="weight-bold">Previous:</span>
+            <a href="{{ previous_post.url }}">{{ previous_post.data.title }}</a>
+          </li>
+          {% endif %} {% if next_post %}
+          <li>
+            <span class="weight-bold">Next:</span>
+            <a href="{{ next_post.url }}">{{ next_post.data.title }}</a>
+          </li>
+          {% endif %}
+        </ul>
+      </nav>
+    </div>
+  </article>
 
-                        <ul class="categories">
-
-                            {# this will create a comma for multiple category links #}
-                            {% set comma = joiner() %}
-
-                            {% for item in tags %}
-
-                                {%- if item !== 'blog' -%}
-
-                                    <li class="category"><a href="/categories/{{ item }}">{{ comma() }} {{ item | capitalize }}</a></li>
-
-                                {%- endif -%}
-
-                            {% endfor %}
-
-                        </ul>
-
-                    </div>
-
-                {% endif %}
-
-            </div>
-
-        </header>
-
-        {# featured post image #}
-        {% if post_image %}
-
-            <figure class="post-image bg-white pt-600 pr-600 pl-600 mb-1000">
-
-                <img data-src="{{ post_image }}" alt="{{ image_alt }}">
-
-                {% if image_alt %}
-                    <figcaption class="post-image-caption bg-white color-primary pt-600 pb-600 text-400">{{ image_alt }}</figcaption>
-                {% endif %}
-
-            </figure>
-
-        {% endif %}
-
-        <div class="content flow length-optimal">
-
-            {{ content | safe }}
-
-            <nav class="pagination mb-1000" aria-label="Pagination">
-                <ul class="items text-400 tablet:box-flex">
-                    {% if previous_post %}<li class="mb-300"><span class="weight-bold">Previous:</span> <a href="{{ previous_post.url }}">{{ previous_post.data.title }}</a></li>{% endif %}
-                    {% if next_post %}<li><span class="weight-bold">Next:</span> <a href="{{ next_post.url }}">{{ next_post.data.title }}</a></li>{% endif %}
-                </ul>
-            </nav>
-
-        </div>
-
-    </article>
-
-    {# schema #}
-    <script type="application/ld+json">
+  {# schema #}
+  <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
@@ -103,7 +81,5 @@ layout: base
         "datePublished": "{{ date | timestamp }}",
         "dateModified": "{{ date | timestamp }}"
     }
-    </script>
-
+  </script>
 </main>
-

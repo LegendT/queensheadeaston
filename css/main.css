@@ -567,6 +567,86 @@
     display: none;
   }
 
+  .mobileL\:mt-200 {
+    margin-top: 0.5rem;
+  }
+
+  .mobileL\:mt-300 {
+    margin-top: 0.8rem;
+  }
+
+  .mobileL\:mt-400 {
+    margin-top: 1rem;
+  }
+
+  .mobileL\:mt-500 {
+    margin-top: 1.25rem;
+  }
+
+  .mobileL\:mt-600 {
+    margin-top: 1.56rem;
+  }
+
+  .mobileL\:mt-700 {
+    margin-top: 1.95rem;
+  }
+
+  .mobileL\:mt-800 {
+    margin-top: 2.44rem;
+  }
+
+  .mobileL\:mt-900 {
+    margin-top: 3.05rem;
+  }
+
+  .mobileL\:mt-1000 {
+    margin-top: 3.81rem;
+  }
+
+  .mobileL\:mt-1100 {
+    margin-top: 4.76rem;
+  }
+
+  .mobileL\:ml-200 {
+    margin-left: 0.5rem;
+  }
+
+  .mobileL\:ml-300 {
+    margin-left: 0.8rem;
+  }
+
+  .mobileL\:ml-400 {
+    margin-left: 1rem;
+  }
+
+  .mobileL\:ml-500 {
+    margin-left: 1.25rem;
+  }
+
+  .mobileL\:ml-600 {
+    margin-left: 1.56rem;
+  }
+
+  .mobileL\:ml-700 {
+    margin-left: 1.95rem;
+  }
+
+  .mobileL\:ml-800 {
+    margin-left: 2.44rem;
+  }
+
+  .mobileL\:ml-900 {
+    margin-left: 3.05rem;
+  }
+
+  .mobileL\:ml-1000 {
+    margin-left: 3.81rem;
+  }
+
+  .mobileL\:ml-1100 {
+    margin-left: 4.76rem;
+  }
+
   .mobileL\:measure-micro {
     max-width: 10ch;
   }
@@ -622,6 +702,86 @@
 
   .mobileXL\:box-hidden {
     display: none;
+  }
+
+  .mobileXL\:mt-200 {
+    margin-top: 0.5rem;
+  }
+
+  .mobileXL\:mt-300 {
+    margin-top: 0.8rem;
+  }
+
+  .mobileXL\:mt-400 {
+    margin-top: 1rem;
+  }
+
+  .mobileXL\:mt-500 {
+    margin-top: 1.25rem;
+  }
+
+  .mobileXL\:mt-600 {
+    margin-top: 1.56rem;
+  }
+
+  .mobileXL\:mt-700 {
+    margin-top: 1.95rem;
+  }
+
+  .mobileXL\:mt-800 {
+    margin-top: 2.44rem;
+  }
+
+  .mobileXL\:mt-900 {
+    margin-top: 3.05rem;
+  }
+
+  .mobileXL\:mt-1000 {
+    margin-top: 3.81rem;
+  }
+
+  .mobileXL\:mt-1100 {
+    margin-top: 4.76rem;
+  }
+
+  .mobileXL\:ml-200 {
+    margin-left: 0.5rem;
+  }
+
+  .mobileXL\:ml-300 {
+    margin-left: 0.8rem;
+  }
+
+  .mobileXL\:ml-400 {
+    margin-left: 1rem;
+  }
+
+  .mobileXL\:ml-500 {
+    margin-left: 1.25rem;
+  }
+
+  .mobileXL\:ml-600 {
+    margin-left: 1.56rem;
+  }
+
+  .mobileXL\:ml-700 {
+    margin-left: 1.95rem;
+  }
+
+  .mobileXL\:ml-800 {
+    margin-left: 2.44rem;
+  }
+
+  .mobileXL\:ml-900 {
+    margin-left: 3.05rem;
+  }
+
+  .mobileXL\:ml-1000 {
+    margin-left: 3.81rem;
+  }
+
+  .mobileXL\:ml-1100 {
+    margin-left: 4.76rem;
   }
 
   .mobileXL\:measure-micro {
@@ -681,6 +841,86 @@
     display: none;
   }
 
+  .tablet\:mt-200 {
+    margin-top: 0.5rem;
+  }
+
+  .tablet\:mt-300 {
+    margin-top: 0.8rem;
+  }
+
+  .tablet\:mt-400 {
+    margin-top: 1rem;
+  }
+
+  .tablet\:mt-500 {
+    margin-top: 1.25rem;
+  }
+
+  .tablet\:mt-600 {
+    margin-top: 1.56rem;
+  }
+
+  .tablet\:mt-700 {
+    margin-top: 1.95rem;
+  }
+
+  .tablet\:mt-800 {
+    margin-top: 2.44rem;
+  }
+
+  .tablet\:mt-900 {
+    margin-top: 3.05rem;
+  }
+
+  .tablet\:mt-1000 {
+    margin-top: 3.81rem;
+  }
+
+  .tablet\:mt-1100 {
+    margin-top: 4.76rem;
+  }
+
+  .tablet\:ml-200 {
+    margin-left: 0.5rem;
+  }
+
+  .tablet\:ml-300 {
+    margin-left: 0.8rem;
+  }
+
+  .tablet\:ml-400 {
+    margin-left: 1rem;
+  }
+
+  .tablet\:ml-500 {
+    margin-left: 1.25rem;
+  }
+
+  .tablet\:ml-600 {
+    margin-left: 1.56rem;
+  }
+
+  .tablet\:ml-700 {
+    margin-left: 1.95rem;
+  }
+
+  .tablet\:ml-800 {
+    margin-left: 2.44rem;
+  }
+
+  .tablet\:ml-900 {
+    margin-left: 3.05rem;
+  }
+
+  .tablet\:ml-1000 {
+    margin-left: 3.81rem;
+  }
+
+  .tablet\:ml-1100 {
+    margin-left: 4.76rem;
+  }
+
   .tablet\:measure-micro {
     max-width: 10ch;
   }
@@ -736,6 +976,86 @@
 
   .laptop\:box-hidden {
     display: none;
+  }
+
+  .laptop\:mt-200 {
+    margin-top: 0.5rem;
+  }
+
+  .laptop\:mt-300 {
+    margin-top: 0.8rem;
+  }
+
+  .laptop\:mt-400 {
+    margin-top: 1rem;
+  }
+
+  .laptop\:mt-500 {
+    margin-top: 1.25rem;
+  }
+
+  .laptop\:mt-600 {
+    margin-top: 1.56rem;
+  }
+
+  .laptop\:mt-700 {
+    margin-top: 1.95rem;
+  }
+
+  .laptop\:mt-800 {
+    margin-top: 2.44rem;
+  }
+
+  .laptop\:mt-900 {
+    margin-top: 3.05rem;
+  }
+
+  .laptop\:mt-1000 {
+    margin-top: 3.81rem;
+  }
+
+  .laptop\:mt-1100 {
+    margin-top: 4.76rem;
+  }
+
+  .laptop\:ml-200 {
+    margin-left: 0.5rem;
+  }
+
+  .laptop\:ml-300 {
+    margin-left: 0.8rem;
+  }
+
+  .laptop\:ml-400 {
+    margin-left: 1rem;
+  }
+
+  .laptop\:ml-500 {
+    margin-left: 1.25rem;
+  }
+
+  .laptop\:ml-600 {
+    margin-left: 1.56rem;
+  }
+
+  .laptop\:ml-700 {
+    margin-left: 1.95rem;
+  }
+
+  .laptop\:ml-800 {
+    margin-left: 2.44rem;
+  }
+
+  .laptop\:ml-900 {
+    margin-left: 3.05rem;
+  }
+
+  .laptop\:ml-1000 {
+    margin-left: 3.81rem;
+  }
+
+  .laptop\:ml-1100 {
+    margin-left: 4.76rem;
   }
 
   .laptop\:measure-micro {
@@ -795,6 +1115,86 @@
     display: none;
   }
 
+  .desktop\:mt-200 {
+    margin-top: 0.5rem;
+  }
+
+  .desktop\:mt-300 {
+    margin-top: 0.8rem;
+  }
+
+  .desktop\:mt-400 {
+    margin-top: 1rem;
+  }
+
+  .desktop\:mt-500 {
+    margin-top: 1.25rem;
+  }
+
+  .desktop\:mt-600 {
+    margin-top: 1.56rem;
+  }
+
+  .desktop\:mt-700 {
+    margin-top: 1.95rem;
+  }
+
+  .desktop\:mt-800 {
+    margin-top: 2.44rem;
+  }
+
+  .desktop\:mt-900 {
+    margin-top: 3.05rem;
+  }
+
+  .desktop\:mt-1000 {
+    margin-top: 3.81rem;
+  }
+
+  .desktop\:mt-1100 {
+    margin-top: 4.76rem;
+  }
+
+  .desktop\:ml-200 {
+    margin-left: 0.5rem;
+  }
+
+  .desktop\:ml-300 {
+    margin-left: 0.8rem;
+  }
+
+  .desktop\:ml-400 {
+    margin-left: 1rem;
+  }
+
+  .desktop\:ml-500 {
+    margin-left: 1.25rem;
+  }
+
+  .desktop\:ml-600 {
+    margin-left: 1.56rem;
+  }
+
+  .desktop\:ml-700 {
+    margin-left: 1.95rem;
+  }
+
+  .desktop\:ml-800 {
+    margin-left: 2.44rem;
+  }
+
+  .desktop\:ml-900 {
+    margin-left: 3.05rem;
+  }
+
+  .desktop\:ml-1000 {
+    margin-left: 3.81rem;
+  }
+
+  .desktop\:ml-1100 {
+    margin-left: 4.76rem;
+  }
+
   .desktop\:measure-micro {
     max-width: 10ch;
   }
@@ -852,6 +1252,86 @@
     display: none;
   }
 
+  .desktopL\:mt-200 {
+    margin-top: 0.5rem;
+  }
+
+  .desktopL\:mt-300 {
+    margin-top: 0.8rem;
+  }
+
+  .desktopL\:mt-400 {
+    margin-top: 1rem;
+  }
+
+  .desktopL\:mt-500 {
+    margin-top: 1.25rem;
+  }
+
+  .desktopL\:mt-600 {
+    margin-top: 1.56rem;
+  }
+
+  .desktopL\:mt-700 {
+    margin-top: 1.95rem;
+  }
+
+  .desktopL\:mt-800 {
+    margin-top: 2.44rem;
+  }
+
+  .desktopL\:mt-900 {
+    margin-top: 3.05rem;
+  }
+
+  .desktopL\:mt-1000 {
+    margin-top: 3.81rem;
+  }
+
+  .desktopL\:mt-1100 {
+    margin-top: 4.76rem;
+  }
+
+  .desktopL\:ml-200 {
+    margin-left: 0.5rem;
+  }
+
+  .desktopL\:ml-300 {
+    margin-left: 0.8rem;
+  }
+
+  .desktopL\:ml-400 {
+    margin-left: 1rem;
+  }
+
+  .desktopL\:ml-500 {
+    margin-left: 1.25rem;
+  }
+
+  .desktopL\:ml-600 {
+    margin-left: 1.56rem;
+  }
+
+  .desktopL\:ml-700 {
+    margin-left: 1.95rem;
+  }
+
+  .desktopL\:ml-800 {
+    margin-left: 2.44rem;
+  }
+
+  .desktopL\:ml-900 {
+    margin-left: 3.05rem;
+  }
+
+  .desktopL\:ml-1000 {
+    margin-left: 3.81rem;
+  }
+
+  .desktopL\:ml-1100 {
+    margin-left: 4.76rem;
+  }
+
   .desktopL\:measure-micro {
     max-width: 10ch;
   }
@@ -907,6 +1387,86 @@
 
   .desktopXL\:box-hidden {
     display: none;
+  }
+
+  .desktopXL\:mt-200 {
+    margin-top: 0.5rem;
+  }
+
+  .desktopXL\:mt-300 {
+    margin-top: 0.8rem;
+  }
+
+  .desktopXL\:mt-400 {
+    margin-top: 1rem;
+  }
+
+  .desktopXL\:mt-500 {
+    margin-top: 1.25rem;
+  }
+
+  .desktopXL\:mt-600 {
+    margin-top: 1.56rem;
+  }
+
+  .desktopXL\:mt-700 {
+    margin-top: 1.95rem;
+  }
+
+  .desktopXL\:mt-800 {
+    margin-top: 2.44rem;
+  }
+
+  .desktopXL\:mt-900 {
+    margin-top: 3.05rem;
+  }
+
+  .desktopXL\:mt-1000 {
+    margin-top: 3.81rem;
+  }
+
+  .desktopXL\:mt-1100 {
+    margin-top: 4.76rem;
+  }
+
+  .desktopXL\:ml-200 {
+    margin-left: 0.5rem;
+  }
+
+  .desktopXL\:ml-300 {
+    margin-left: 0.8rem;
+  }
+
+  .desktopXL\:ml-400 {
+    margin-left: 1rem;
+  }
+
+  .desktopXL\:ml-500 {
+    margin-left: 1.25rem;
+  }
+
+  .desktopXL\:ml-600 {
+    margin-left: 1.56rem;
+  }
+
+  .desktopXL\:ml-700 {
+    margin-left: 1.95rem;
+  }
+
+  .desktopXL\:ml-800 {
+    margin-left: 2.44rem;
+  }
+
+  .desktopXL\:ml-900 {
+    margin-left: 3.05rem;
+  }
+
+  .desktopXL\:ml-1000 {
+    margin-left: 3.81rem;
+  }
+
+  .desktopXL\:ml-1100 {
+    margin-left: 4.76rem;
   }
 
   .desktopXL\:measure-micro {
@@ -1136,6 +1696,10 @@ time[datetime] {
   display: inline-block;
   color: #01093c;
   font-size: 1.56rem;
+}
+
+h2 + p {
+  margin-top: 0;
 }
 
 a {
@@ -1633,4 +2197,7 @@ header {
   .event .event-image {
     max-width: 30vw;
   }
+}
+.event .event-info {
+  max-width: 35%;
 }

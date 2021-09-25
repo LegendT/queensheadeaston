@@ -2,14 +2,14 @@
 layout: base
 ---
 
-<main id="main" class="main tablet:box-flex pb-1100" tabindex="-1">
-  <article class="inner event tablet:box-flex">
+<main id="main" class="[ main ] [ tablet:box-flex pb-1100 ]  [ flow ]" tabindex="-1">
+  <article class="[ event inner  ] [ tablet:box-flex ]">
     {# featured post image #} {% if poster.src %}
-    <figure class="event-image bg-white pt-600 pr-600 pl-600 mb-1000">
+    <figure class="[ event-image ] [ bg-white pt-600 pr-600 pl-600 mb-1000 ]">
       <img src="{{ poster.src }}" alt="{{ poster.alt }}" />
       {% if poster.alt %}
       <figcaption
-        class="post-image-caption bg-white color-primary pt-600 pb-600 text-400"
+        class="[ post-image-caption ] [ bg-white color-primary pt-600 pb-600 text-400 ]"
       >
         <span class="sr-only">{{ poster.alt }}</span>
       </figcaption>
@@ -17,49 +17,32 @@ layout: base
     </figure>
     {% endif %}
 
-    <div class="flow length-optimal">
-      <div class="post-meta box-flex mt-800 text-400">
-        {% if tags %}
-        <div class="box-flex">
-          <ul class="categories">
-            {# this will create a comma for multiple category links #} {% set
-            comma = joiner() %} {% for item in tags %} {%- if item !== 'blog'
-            -%}
-            <li class="category">
-              <a href="/categories/{{ item }}"
-                >{{ comma() }} {{ item | capitalize }}</a
-              >
-            </li>
-            {%- endif -%} {% endfor %}
-          </ul>
-        </div>
-        {% endif %}
-      </div>
-
-      <div class="event-headings">
+      <div class="[ event-headings ] [ mb-300 mobileXL:mt-1000 ]">
         <h2>{{ name }}</h2>
-        <p class="affiliations">{{ affiliations }}</p>
+       {% if affiliations %} <p class="affiliations">{{ affiliations }}</p>{% endif %}
         <p>
-          <time class="mt-300 datetime" datetime="{{ date | dateDisplay }}"
+          <time class="[ datetime] " datetime="{{ date | dateDisplay }}"
             >{{ day }} {{ date | dateDisplay }}</time
           >
         </p>
       </div>
-      {{ description | markdownFilter | safe }}
+      <div  class="[ event-info ]  [ mobileXL:ml-1000 mobileXL:mt-1000 ]">
+        {{ description | markdownFilter | safe }}
+      </div>
     </div>
   </article>
 
-  <div class="inner">
-    <nav class="pagination pr-600 pl-600 mb-1000" aria-label="Pagination">
-      <ul class="items text-400 tablet:box-flex">
+  <div class="[ inner ]">
+    <nav class="[ pagination ] [ mt-500 mobileL:mt-100 mobileL:pr-600 mobileL:pl-600 mb-1000 ]" aria-label="Pagination">
+      <ul class="[ items ] [ text-400 tablet:box-flex ]">
         {% if previous_event %}
-        <li class="mb-300">
-          <span class="weight-bold">Previous:</span>
+        <li class="[ mb-300 ]">
+          <span class="[ weight-bold ]">Previous:</span>
           <a href="{{ previous_event.url }}">{{ previous_event.data.name }}</a>
         </li>
         {% endif %} {% if next_event %}
         <li>
-          <span class="weight-bold">Next:</span>
+          <span class="[ weight-bold ]">Next:</span>
           <a href="{{ next_event.url }}">{{ next_event.data.name }}</a>
         </li>
         {% endif %}

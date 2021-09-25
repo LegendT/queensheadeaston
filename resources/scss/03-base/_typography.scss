@@ -51,3 +51,6 @@ time[datetime] {
   color: get-color("primary");
   font-size: get-size("600");
 }
+h2 + p {
+  margin-top: 0;
+}

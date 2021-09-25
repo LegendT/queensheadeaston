@@ -1,13 +1,17 @@
 .event {
-	.content {
-		@include media-query('laptop') {
-			margin: 0 auto;
-		}
-	}
-	.event-image {
-		margin: 0 auto;
-		@include media-query('tablet') {
-			max-width: 30vw;
-		}
-	}
+  .content {
+    @include media-query("laptop") {
+      margin: 0 auto;
+    }
+  }
+
+  .event-image {
+    margin: 0 auto;
+    @include media-query("tablet") {
+      max-width: 30vw;
+    }
+  }
+  .event-info {
+    max-width: 35%;
+  }
 }

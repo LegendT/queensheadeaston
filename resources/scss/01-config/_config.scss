@@ -82,7 +82,7 @@ $gorko-config: (
   ),
   "mt": (
     "items": $gorko-size-scale,
-    "output": "standard",
+    "output": "responsive",
     "property": "margin-top",
   ),
   "mb": (
@@ -92,7 +92,7 @@ $gorko-config: (
   ),
   "ml": (
     "items": $gorko-size-scale,
-    "output": "standard",
+    "output": "responsive",
     "property": "margin-left",
   ),
   "mr": (
@@ -204,6 +204,6 @@ $gorko-config: (
     // 1280px
     "desktopL": "(min-width : 90em)",
     // 1440px
-    "desktopXL": "(min-width : 120em)" // 1920px,,,,,,,,,
+    "desktopXL": "(min-width : 120em)" // 1920px,,,,,,,,,,,,
   ),
 );
