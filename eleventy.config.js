@@ -99,6 +99,12 @@ module.exports = (config) => {
 
     return Array.from(list).sort();
   });
+  // Food
+  config.addCollection("foods", (collection) => {
+    const foodList = collection.getFilteredByGlob("./site/food-menu/menu/*.md");
+
+    return foodList;
+  });
 
   // Layout aliases
   config.addLayoutAlias("base", "layouts/base.njk");
@@ -111,6 +117,8 @@ module.exports = (config) => {
   config.addLayoutAlias("events", "layouts/events-list.njk");
   config.addLayoutAlias("events-past", "layouts/events-list-past.njk");
   config.addLayoutAlias("event", "layouts/event.njk");
+  config.addLayoutAlias("food-list", "layouts/food-menu.njk");
+  config.addLayoutAlias("food", "layouts/food.njk");
 
   // Include our static assets
   config.addPassthroughCopy("css");

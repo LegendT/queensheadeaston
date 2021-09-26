@@ -1,19 +1,19 @@
 {
-	"name": "The Queens Head, Easton, Bristol",
-	"url": "https://queensheadeaston.com/",
-	"author": {
-		"name": "Anthony George",
-		"handle": "@legendary_tone"
-	},
-	"images": {
-		"favicon": "/favicon.png",
-		"favicon_svg": "/favicon.svg",
-		"apple_touch_icon": "/images/meta/apple-touch-icon.png",
-		"twitter": "/images/meta/twitter.jpg",
-		"og": "/images/meta/og.jpg"
-	},
-	"social_links": {
-		"github": "https://github.com/LegendT/queensheadeaston",
-		"twitter": "https://twitter.com/Legendary_Tone"
-	}
+  "name": "The Queens Head, Easton, Bristol",
+  "url": "https://queensheadeaston.com",
+  "author": {
+    "name": "Anthony George",
+    "handle": "@legendary_tone"
+  },
+  "images": {
+    "favicon": "/favicon.png",
+    "favicon_svg": "/favicon.svg",
+    "apple_touch_icon": "/images/meta/apple-touch-icon.png",
+    "twitter": "/images/meta/twitter.jpg",
+    "og": "/images/meta/og.jpg"
+  },
+  "social_links": {
+    "github": "https://github.com/LegendT/queensheadeaston",
+    "twitter": "https://twitter.com/Legendary_Tone"
+  }
 }

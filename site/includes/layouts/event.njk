@@ -22,9 +22,12 @@ layout: base
        {% if affiliations %} <p class="affiliations">{{ affiliations }}</p>{% endif %}
         <p>
           <time class="[ datetime] " datetime="{{ date | dateDisplay }}"
-            >{{ day }} {{ date | dateDisplay }}</time
-          >
+            >{{ day }} {{ date | dateDisplay }}</br>{{startTime}} - {{endTime}}</time>
         </p>
+        <p>Free entry</p>
+        {% if facebook %}
+        <p><a href="{{facebook}}">Facebook event</a></p>
+        {% endif %}
       </div>
       <div  class="[ event-info ]  [ mobileXL:ml-1000 mobileXL:mt-1000 ]">
         {{ description | markdownFilter | safe }}
@@ -79,7 +82,7 @@ layout: base
         "image": "{{ site.url }}images/qh-logo.png",
         "acceptsReservations": "No",
         "description": "Friendly local pub  with an excellent beer selection. Freshly made Pub food and Sunday lunches. An eclectic blend of quality music played by DJ's at the weekends. Large, partially covered pub garden with heating",
-        "menu": "https://queensheadeaston.co.uk/menu/",
+        "menu": "https://queensheadeaston.co.uk/food-menu/",
         "geo": {
           "@type": "GeoCoordinates",
           "name": "Geo Location of The Queens Head, Easton. Bristol. BS5 0ES",

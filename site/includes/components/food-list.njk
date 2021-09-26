@@ -1,0 +1,9 @@
+<div class="posts inner box-grid">
+  <ul>
+    {% for food in collections.foods %}
+    <li>
+      <a href="{{ food.url }}">{{ food.data.name }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
