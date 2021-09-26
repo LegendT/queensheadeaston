@@ -7,5 +7,3 @@ eleventyNavigation:
   key: Food Menu
   order: 3
 ---
-
-# Food Menu
